@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.4.1] - 2026-05-04
+
+### Fixed
+- Arabic locale (`assets/i18n.js`): brand and vendor names restored to Latin per the project rule (`avad.ai`, `Anthropic`, `OpenAI`, `Google` — were `أفاد`, `أنثروبيك`, `أوبن أيه آي`, `جوجل`).
+- Voice in `hero.lede` and `proof.head` switched from first-person (`نبني`) back to third-person with `avad.ai` as the subject (`تبني avad.ai…` / `ما تُسلّمه avad.ai…`) to match EN.
+- Hero `eyebrow` and `lede` now read `محايدة تجاه النموذج` (model-agnostic) instead of `مستقلة عن المزوّد` (provider-agnostic).
+- `nav.cred` and `cred.tag` corrected from `المرجعية التقنية` (technical reference) to `المصداقية التقنية` (technical credibility).
+- Problem quote 1 verb `شحنّا/شحن` (cargo verb) replaced with `أطلقنا/إطلاق`.
+- `services.list[3].h`: PDPL qualifier `السعودي` reinstated; `services.list[5].promise`: `الأرباح` → `الأرباح والخسائر` (P&L); cred AI-literacy item gained `بالذكاء الاصطناعي`; cred DPIA item gained `حماية البيانات (DPIA)`.
+
+### Changed
+- Naturalness pass on AR locale terms a senior Saudi/Gulf buyer would notice as calque-y:
+  `تأطير` → `استكشافية` / `تحديد النطاق`;
+  `وضع/أوضاع الفشل` → `نمط/أنماط الفشل` (FMEA-standard);
+  `ارتباط/ارتباطات` → `مهمة/مهام` (with verb and pronoun gender flips);
+  `العمل القيادي` / `قياديين` → `أعمال كبار المهندسين` / `مهندسَين كبيرَين`;
+  `الكمون` → `زمن الاستجابة`;
+  `وعي افتراضي بـ PDPL` → `متوافق افتراضيًا مع PDPL`;
+  `أحمال` → `أحمال العمل` / `حِمل تشغيل`;
+  `كُتيّب`/`كتيّب` → `دليل`;
+  `رسوم نجاح` → `أتعاب أداء`, `رسومًا أساسية` → `أتعابًا أساسية`;
+  `حركة حقيقية` → `حركة فعلية`, `حركة الإنتاج الحالية` → `حركة إنتاج فعلية`, `حركة تشبه الإنتاج` → `حركة شبيهة بالإنتاج`;
+  `بنية قابلة لنقل النموذج` → `بنية قابلة لتبديل النموذج` (in services title and footer link);
+  `الإلمام التنظيمي` → `الكفاءة التنظيمية`;
+  `وثائق المناوبة` → `وثائق الاستدعاء`;
+  `مرافقة عملية على ارتباط حقيقي` → `عمل جنبًا إلى جنب على مهمة فعلية`.
+- Polish: `hero.cta2` adds `منهجيتنا`; `hero.meta3` aligns to `PDPL السعودي`; `proof.strip[0]` aligns to `حزمة التقييم على مستوى المسار`; `proof.strip[3]` drops the unwarranted `الفريق` qualifier; `faq.tag` aligned with `nav.faq` (`الأسئلة الشائعة`); `faq.items[7].q` reinstates `في مستودعنا`; `services.list[2].h` drops the unwarranted `في فريقك` qualifier (header noun phrase only).
+
+EN locale untouched.
+
 ## [0.0.4.0] - 2026-05-04
 
 ### Removed
