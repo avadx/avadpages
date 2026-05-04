@@ -145,11 +145,15 @@ const { t, homeHref, currentLocale } = Astro.props;
     text-decoration: none;
     color: var(--ink);
     padding-block: var(--sp-xs);
-    transition: color var(--dur-short) var(--ease-out);
+    transition: text-decoration-color var(--dur-short) var(--ease-out);
   }
 
-  .nav-links a:hover {
-    color: var(--muted);
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--ink);
   }
 
   .nav-actions {
