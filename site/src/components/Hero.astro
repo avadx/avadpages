@@ -1,0 +1,134 @@
+---
+import Artifact from "./Artifact.astro";
+import Button from "./Button.astro";
+import type { Strings } from "../i18n/en";
+
+interface Props {
+  t: Strings;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="hero__eyebrow">{t.hero.eyebrow}</p>
+      <h1 id="hero-h1" class="hero__h1">
+        <span>{t.hero.h1Pre}</span><span class="hero__accent">{t.hero.h1Accent}</span><span>{t.hero.h1Post}</span>
+      </h1>
+      <p class="hero__lede">{t.hero.subhead}</p>
+      <div class="hero__cta">
+        <Button variant="primary" href="#book">
+          {t.hero.ctaPrimary}
+        </Button>
+        <Button variant="secondary" href="#cred">
+          {t.hero.ctaSecondary}
+        </Button>
+      </div>
+    </div>
+    <div class="hero__artifact">
+      <Artifact t={t} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: var(--bg);
+    border-block-end: 0.5px solid var(--rule);
+  }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 56px;
+    padding-block: var(--sp-2xl) var(--sp-4xl);
+    align-items: center;
+  }
+
+  .hero__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero__eyebrow {
+    margin: 0 0 28px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+
+  .hero__h1 {
+    margin: 0 0 20px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(40px, 5.6vw, 60px);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .hero__accent {
+    color: var(--signal);
+    position: relative;
+  }
+
+  .hero__lede {
+    margin: 0 0 32px;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 56ch;
+  }
+
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-md);
+  }
+
+  [lang="ar"] .hero__h1,
+  html[dir="rtl"] .hero__h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    letter-spacing: 0;
+    line-height: 1.2;
+  }
+
+  [lang="ar"] .hero__lede,
+  html[dir="rtl"] .hero__lede {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  html[dir="rtl"] .hero__eyebrow {
+    direction: ltr;
+    text-align: start;
+  }
+
+  @media (max-width: 1023px) {
+    .hero__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding-block: var(--sp-xl) var(--sp-3xl);
+      align-items: start;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero__cta {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .hero__cta :global(.btn) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

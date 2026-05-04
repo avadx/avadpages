@@ -1,0 +1,216 @@
+---
+import type { Strings } from "../i18n/en";
+
+interface Props {
+  t: Strings;
+}
+
+const { t } = Astro.props;
+const a = t.artifact;
+---
+
+<aside class="artifact" aria-label={a.title}>
+  <header class="artifact__bar">
+    <span class="artifact__file">{a.title}</span>
+    <span class="artifact__tag">{a.tag}</span>
+  </header>
+  <div class="artifact__tbl" role="table">
+    <div class="artifact__thead" role="row">
+      <span role="columnheader">{a.columns.case}</span>
+      <span role="columnheader">{a.columns.result}</span>
+      <span role="columnheader">{a.columns.status}</span>
+    </div>
+    {a.rows.map((row) => (
+      <div class="artifact__row" role="row">
+        <span class="artifact__name" role="cell">{row.name}</span>
+        <span class="artifact__num" role="cell">{row.num}</span>
+        <span class={`artifact__state artifact__state--${row.state}`} role="cell">{row.label}</span>
+      </div>
+    ))}
+  </div>
+  <div class="artifact__summary">
+    {a.stats.map((stat) => (
+      <div class="artifact__stat">
+        <span class="artifact__stat-k">{stat.k}</span>
+        <span class={`artifact__stat-v artifact__stat-v--${stat.tone}`}>{stat.v}</span>
+      </div>
+    ))}
+  </div>
+</aside>
+
+<style>
+  .artifact {
+    background: var(--paper);
+    border: 0.5px solid var(--rule);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--ink);
+    overflow: hidden;
+  }
+
+  .artifact__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-md);
+    padding: 10px 14px;
+    background: var(--bg);
+    border-block-end: 0.5px solid var(--rule);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+
+  .artifact__file {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .artifact__tag {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .artifact__tbl {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto 92px;
+  }
+
+  .artifact__thead {
+    display: contents;
+  }
+
+  .artifact__thead > span {
+    background: var(--paper);
+    padding: 10px 14px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    border-block-end: 0.5px solid var(--rule);
+    font-weight: 500;
+  }
+
+  .artifact__row {
+    display: contents;
+  }
+
+  .artifact__row > * {
+    padding: 12px 14px;
+    border-block-end: 0.5px solid var(--rule);
+    display: flex;
+    align-items: center;
+  }
+
+  .artifact__row:last-child > * {
+    border-block-end: 0;
+  }
+
+  .artifact__name {
+    color: var(--ink);
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .artifact__num {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .artifact__state {
+    justify-content: flex-end;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .artifact__state::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    display: inline-block;
+    margin-inline-end: 8px;
+    border-radius: 50%;
+  }
+
+  .artifact__state--pass {
+    color: var(--pass);
+  }
+
+  .artifact__state--fail {
+    color: var(--fail);
+  }
+
+  .artifact__state--warn {
+    color: var(--review);
+  }
+
+  .artifact__summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-block-start: 0.5px solid var(--rule);
+    background: var(--bg);
+  }
+
+  .artifact__stat {
+    padding: 12px 14px;
+    border-inline-end: 0.5px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .artifact__stat:last-child {
+    border-inline-end: 0;
+  }
+
+  .artifact__stat-k {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+
+  .artifact__stat-v {
+    font-size: 14px;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .artifact__stat-v--ok {
+    color: var(--pass);
+  }
+
+  .artifact__stat-v--warn {
+    color: var(--review);
+  }
+
+  /* Keep mono artifact LTR even in RTL pages */
+  html[dir="rtl"] .artifact {
+    direction: ltr;
+  }
+
+  @media (max-width: 640px) {
+    .artifact__tbl {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+    .artifact__thead > span:nth-child(2),
+    .artifact__row > .artifact__num {
+      display: none;
+    }
+    .artifact__summary {
+      grid-template-columns: 1fr 1fr;
+    }
+    .artifact__stat:nth-child(2n) {
+      border-inline-end: 0;
+    }
+    .artifact__stat:nth-child(-n + 2) {
+      border-block-end: 0.5px solid var(--rule);
+    }
+  }
+</style>

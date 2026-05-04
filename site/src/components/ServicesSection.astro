@@ -1,0 +1,280 @@
+---
+import SectionHead from "./SectionHead.astro";
+import type { Strings } from "../i18n/en";
+
+interface Props {
+  t: Strings;
+}
+
+const { t } = Astro.props;
+const labels = t.services.labels;
+---
+
+<section id="services" class="services" aria-labelledby="services-h2">
+  <div class="wrap">
+    <SectionHead
+      tag={t.services.tag}
+      h2={t.services.h2}
+      sub={t.services.sub}
+      headingId="services-h2"
+    />
+    <div class="services__list">
+      {t.services.list.map((s) => (
+        <details class="svc">
+          <summary class="svc__summary">
+            <div class="svc__top">
+              <span class="svc__num">{s.num}</span>
+              <h3 class="svc__h">{s.h}</h3>
+              <span class="svc__promise">{s.promise}</span>
+            </div>
+            <span class="svc__toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="svc__body">
+            <div>
+              <h4 class="svc__k">{labels.scope}</h4>
+              <ul class="svc__scope">
+                {s.scope.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+            <aside class="svc__meta">
+              <span class="svc__meta-k">{labels.buyer}</span>
+              <span class="svc__meta-v">{s.buyer}</span>
+              <span class="svc__meta-k">{labels.shape}</span>
+              <span class="svc__meta-v">{s.shape}</span>
+              <span class="svc__meta-tag">{s.tag}</span>
+            </aside>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    padding-block: var(--sp-4xl);
+    border-block-start: 0.5px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .services__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 0.5px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .svc {
+    border-block-end: 0.5px solid var(--rule);
+  }
+
+  .svc:last-child {
+    border-block-end: 0;
+  }
+
+  .svc__summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--sp-base);
+  }
+
+  .svc__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .svc__top {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--sp-lg);
+    align-items: baseline;
+    min-width: 0;
+  }
+
+  .svc__num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+
+  .svc__h {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+
+  .svc__promise {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+    text-align: end;
+  }
+
+  [lang="ar"] .svc__promise,
+  html[dir="rtl"] .svc__promise {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .svc__toggle {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    color: var(--structure);
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid var(--rule);
+    transition:
+      color var(--dur-short) var(--ease-out),
+      border-color var(--dur-short) var(--ease-out),
+      transform var(--dur-short) var(--ease-out);
+  }
+
+  .svc[open] .svc__toggle {
+    color: var(--ink);
+    border-color: var(--ink);
+    transform: rotate(45deg);
+  }
+
+  .svc__body {
+    padding: 4px 24px 28px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--sp-xl);
+  }
+
+  .svc__k {
+    margin: 0 0 var(--sp-md);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+
+  .svc__scope {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .svc__scope li {
+    padding-block: 8px;
+    border-block-start: 0.5px solid var(--rule);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .svc__scope li:first-child {
+    border-block-start: 0;
+    padding-block-start: 0;
+  }
+
+  .svc__meta {
+    background: var(--bg);
+    padding: 18px 18px 16px;
+    border: 0.5px solid var(--rule);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 14px;
+    align-content: start;
+  }
+
+  .svc__meta-k {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    padding-block-start: 2px;
+  }
+
+  .svc__meta-v {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .svc__meta-tag {
+    grid-column: 1 / -1;
+    margin-block-start: var(--sp-md);
+    padding-block-start: var(--sp-md);
+    border-block-start: 0.5px solid var(--rule);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--signal);
+  }
+
+  [lang="ar"] .svc__h,
+  html[dir="rtl"] .svc__h {
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+
+  [lang="ar"] .svc__scope li,
+  html[dir="rtl"] .svc__scope li {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  [lang="ar"] .svc__meta-v,
+  html[dir="rtl"] .svc__meta-v {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  html[dir="rtl"] .svc__num,
+  html[dir="rtl"] .svc__promise,
+  html[dir="rtl"] .svc__meta-k,
+  html[dir="rtl"] .svc__meta-tag {
+    direction: ltr;
+    text-align: start;
+  }
+
+  @media (max-width: 1023px) {
+    .svc__top {
+      grid-template-columns: auto 1fr;
+    }
+    .svc__promise {
+      grid-column: 1 / -1;
+      text-align: start;
+    }
+    .svc__body {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .services {
+      padding-block: var(--sp-2xl);
+    }
+    .svc__summary {
+      padding: 18px;
+    }
+    .svc__top {
+      grid-template-columns: 1fr;
+      gap: var(--sp-xs);
+    }
+    .svc__body {
+      padding: 4px 18px 24px;
+    }
+  }
+</style>

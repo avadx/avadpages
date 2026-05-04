@@ -1,0 +1,203 @@
+---
+import Logo from "./Logo.astro";
+import type { Strings } from "../i18n/en";
+
+interface Props {
+  t: Strings;
+  currentLocale: "en" | "ar";
+}
+
+const { t, currentLocale } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="wrap site-footer__grid">
+    <div class="site-footer__brand">
+      <a href={currentLocale === "ar" ? "/ar/" : "/"} class="site-footer__brand-link" aria-label="avad.ai">
+        <Logo height={22} ariaLabel="avad.ai" />
+      </a>
+      <p class="site-footer__blurb">{t.footer.blurb}</p>
+      <span class="site-footer__lang" aria-label="language">
+        <a href="/" aria-current={currentLocale === "en" ? "page" : undefined} lang="en">{t.footer.languageEN}</a>
+        <span class="site-footer__sep" aria-hidden="true">/</span>
+        <a href="/ar/" aria-current={currentLocale === "ar" ? "page" : undefined} lang="ar">{t.footer.languageAR}</a>
+      </span>
+    </div>
+    {t.footer.groups.map((group) => (
+      <section class="site-footer__group" aria-label={group.h}>
+        <h3 class="site-footer__group-h">{group.h}</h3>
+        <ul>
+          {group.links.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+  <div class="wrap site-footer__bot">
+    <span>{t.footer.legal}</span>
+    <span>{t.footer.stamp}</span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--paper);
+    border-top: 0.5px solid var(--rule);
+    padding-block: var(--sp-2xl) var(--sp-lg);
+    margin-top: 0;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: var(--sp-2xl);
+    padding-block-end: var(--sp-xl);
+    border-block-end: 0.5px solid var(--rule);
+  }
+
+  .site-footer__brand {
+    max-width: 32ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+  }
+
+  .site-footer__brand-link {
+    display: inline-flex;
+    color: var(--ink);
+    text-decoration: none;
+    width: fit-content;
+  }
+
+  .site-footer__blurb {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  .site-footer__lang {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-xs);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    width: fit-content;
+  }
+
+  .site-footer__lang a {
+    color: var(--muted);
+    text-decoration: none;
+    padding-inline: 4px;
+    transition: color var(--dur-short) var(--ease-out);
+  }
+
+  .site-footer__lang a:hover,
+  .site-footer__lang a[aria-current="page"] {
+    color: var(--ink);
+  }
+
+  .site-footer__sep {
+    color: var(--rule);
+  }
+
+  .site-footer__group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-sm);
+  }
+
+  .site-footer__group-h {
+    margin: 0;
+    margin-block-end: var(--sp-xs);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+
+  .site-footer__group ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-footer__group li {
+    padding-block: 4px;
+  }
+
+  .site-footer__group a {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--ink);
+    text-decoration: none;
+    border-block-end: 1px solid transparent;
+    transition: border-color var(--dur-short) var(--ease-out);
+  }
+
+  .site-footer__group a:hover {
+    border-block-end-color: var(--ink);
+  }
+
+  .site-footer__bot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-base);
+    padding-block-start: var(--sp-md);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
+  [lang="ar"] .site-footer__group a,
+  html[dir="rtl"] .site-footer__group a {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  [lang="ar"] .site-footer__blurb,
+  html[dir="rtl"] .site-footer__blurb {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  html[dir="rtl"] .site-footer__bot {
+    direction: ltr;
+    text-align: start;
+  }
+
+  @media (max-width: 1023px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-xl);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+      gap: var(--sp-xl);
+    }
+    .site-footer__bot {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

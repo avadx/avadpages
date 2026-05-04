@@ -54,6 +54,10 @@ coverage/
 *.lcov
 playwright-report/
 test-results/
+.playwright-mcp/
+
+# Local screenshot artifacts
+avad-*.png
 
 # Misc
 *.tmp

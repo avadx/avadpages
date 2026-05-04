@@ -1,0 +1,227 @@
+---
+import Logo from "./Logo.astro";
+import type { Strings } from "../i18n/en";
+
+interface Props {
+  t: Strings;
+  homeHref: string;
+  currentLocale: "en" | "ar";
+}
+
+const { t, homeHref, currentLocale } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href={homeHref} aria-label="avad">
+      <Logo height={22} ariaLabel="avad" />
+    </a>
+    <nav class="nav-links" aria-label="primary">
+      <a href="#services">{t.nav.services}</a>
+      <a href="#how">{t.nav.how}</a>
+      <a href="#why">{t.nav.why}</a>
+      <a href="#cred">{t.nav.cred}</a>
+      <a href="#faq">{t.nav.faq}</a>
+    </nav>
+    <div class="nav-actions">
+      <a
+        class="lang-toggle"
+        href={currentLocale === "en" ? "/ar/" : "/"}
+        lang={currentLocale === "en" ? "ar" : "en"}
+        aria-label={currentLocale === "en" ? "العربية" : "English"}
+      >{currentLocale === "en" ? "عربي" : "EN"}</a>
+      <button
+        class="theme-toggle"
+        type="button"
+        data-theme-toggle
+        data-label-light={t.meta.themeLight}
+        data-label-dark={t.meta.themeDark}
+        aria-label={`${t.meta.themeLight} / ${t.meta.themeDark}`}
+      >
+        <span data-theme-label></span>
+      </button>
+    </div>
+  </div>
+  <div class="wrap meta-strip">
+    <span class="meta-left">
+      <span>{t.meta_strip.runLabel}</span>
+      <span class="dot-sep" aria-hidden="true">·</span>
+      <span>{t.meta_strip.runDate}</span>
+      <span class="dot-sep" aria-hidden="true">·</span>
+      <span>{t.meta_strip.runTime}</span>
+    </span>
+    <span class="meta-right">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span>{t.meta_strip.statusLabel}</span>
+      <span class="dot-sep" aria-hidden="true">·</span>
+      <span>{t.meta_strip.statusTasks}</span>
+      <span class="dot-sep" aria-hidden="true">·</span>
+      <span>{t.meta_strip.statusModels}</span>
+    </span>
+  </div>
+</header>
+
+<script is:inline>
+  (function () {
+    const root = document.documentElement;
+    const stored = localStorage.getItem("theme");
+    if (stored === "light" || stored === "dark") {
+      root.setAttribute("data-theme", stored);
+    }
+    const button = document.querySelector("[data-theme-toggle]");
+    if (!button) return;
+    const labelEl = button.querySelector("[data-theme-label]");
+    const lightLabel = button.getAttribute("data-label-light") || "Light";
+    const darkLabel = button.getAttribute("data-label-dark") || "Dark";
+    function currentTheme() {
+      return (
+        root.getAttribute("data-theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light")
+      );
+    }
+    function syncLabel() {
+      if (!labelEl) return;
+      // Show the OPPOSITE of the current theme — the click target.
+      labelEl.textContent = currentTheme() === "dark" ? lightLabel : darkLabel;
+    }
+    syncLabel();
+    button.addEventListener("click", function () {
+      const next = currentTheme() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+      syncLabel();
+    });
+  })();
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border-bottom: 0.5px solid var(--rule);
+  }
+
+  .nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-base);
+    padding-block: var(--sp-md);
+    border-bottom: 0.5px solid var(--rule);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .nav-links {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-lg);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--ink);
+    padding-block: var(--sp-xs);
+    transition: color var(--dur-short) var(--ease-out);
+  }
+
+  .nav-links a:hover {
+    color: var(--muted);
+  }
+
+  .nav-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-base);
+  }
+
+  .lang-toggle,
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    border: 0.5px solid var(--rule);
+    border-radius: 0;
+    padding: 4px 8px;
+    background: transparent;
+    text-decoration: none;
+    transition: border-color var(--dur-short) var(--ease-out),
+      color var(--dur-short) var(--ease-out);
+  }
+
+  .lang-toggle:hover,
+  .theme-toggle:hover {
+    border-color: var(--ink);
+  }
+
+  .lang-toggle {
+    direction: ltr;
+  }
+
+  .meta-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-base);
+    padding-block: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+
+  .meta-left,
+  .meta-right {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-sm);
+  }
+
+  .dot-sep {
+    color: var(--rule);
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--pass);
+    border-radius: 0;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1023px) {
+    .nav-links {
+      gap: var(--sp-md);
+    }
+    .nav-links a {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .meta-strip {
+      font-size: 10px;
+    }
+  }
+</style>

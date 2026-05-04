@@ -1,0 +1,189 @@
+---
+import SectionHead from "./SectionHead.astro";
+import type { Strings } from "../i18n/en";
+
+interface Props {
+  t: Strings;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="cred" class="cred" aria-labelledby="cred-h2">
+  <div class="wrap">
+    <SectionHead
+      tag={t.cred.tag}
+      h2={t.cred.h2}
+      sub={t.cred.sub}
+      headingId="cred-h2"
+    />
+    <div class="cred__grid">
+      {t.cred.cards.map((card) => (
+        <article class="cred-card">
+          <h3 class="cred-card__h">{card.h}</h3>
+          {card.type === "pills" ? (
+            <div class="cred-card__pills">
+              {card.items.map((item) => (
+                <span class="cred-card__pill">{item}</span>
+              ))}
+            </div>
+          ) : (
+            <ul class="cred-card__list">
+              {card.items.map((item) => (
+                <li>
+                  <span class="cred-card__check" aria-hidden="true">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {card.foot && <p class="cred-card__foot">{card.foot}</p>}
+        </article>
+      ))}
+    </div>
+    <p class="cred__stamp">{t.cred.stamp}</p>
+  </div>
+</section>
+
+<style>
+  .cred {
+    padding-block: var(--sp-4xl);
+    border-block-start: 0.5px solid var(--rule);
+    background: var(--bg);
+  }
+
+  .cred__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 0.5px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .cred-card {
+    padding: 28px;
+    border-inline-end: 0.5px solid var(--rule);
+    border-block-end: 0.5px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cred-card:nth-child(2n) {
+    border-inline-end: 0;
+  }
+
+  .cred-card:nth-last-child(-n + 2) {
+    border-block-end: 0;
+  }
+
+  .cred-card__h {
+    margin: 0 0 18px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+
+  .cred-card__pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .cred-card__pill {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 8px;
+    border: 0.5px solid var(--rule);
+    background: var(--bg);
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .cred-card__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cred-card__list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding-block: 8px;
+    border-block-start: 0.5px solid var(--rule);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .cred-card__list li:first-child {
+    border-block-start: 0;
+    padding-block-start: 0;
+  }
+
+  .cred-card__check {
+    color: var(--signal);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+    flex-shrink: 0;
+  }
+
+  .cred-card__foot {
+    margin: 18px 0 0;
+    padding-block-start: 14px;
+    border-block-start: 0.5px solid var(--rule);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
+  .cred__stamp {
+    margin: 24px 0 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
+  [lang="ar"] .cred-card__list li,
+  html[dir="rtl"] .cred-card__list li {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  html[dir="rtl"] .cred-card__h,
+  html[dir="rtl"] .cred-card__foot,
+  html[dir="rtl"] .cred__stamp {
+    direction: ltr;
+    text-align: start;
+  }
+
+  @media (max-width: 767px) {
+    .cred {
+      padding-block: var(--sp-2xl);
+    }
+    .cred__grid {
+      grid-template-columns: 1fr;
+    }
+    .cred-card {
+      border-inline-end: 0;
+      border-block-end: 0.5px solid var(--rule);
+    }
+    .cred-card:nth-last-child(-n + 2) {
+      border-block-end: 0.5px solid var(--rule);
+    }
+    .cred-card:last-child {
+      border-block-end: 0;
+    }
+    .cred-card {
+      padding: var(--sp-lg);
+    }
+  }
+</style>
