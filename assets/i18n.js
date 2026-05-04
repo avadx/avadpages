@@ -1,4 +1,4 @@
-/* avad.ai — bilingual content. EN canonical, AR mirrors meaning, not phrasing. */
+/* avad.ai - bilingual content. EN canonical, AR mirrors meaning, not phrasing. */
 window.AVAD_I18N = {
   en: {
     dir: "ltr",
@@ -67,19 +67,19 @@ window.AVAD_I18N = {
           h: "“We shipped one AI demo. We can’t ship a second.”",
           q:
             "The first agent looked great in the demo. Then we put it in front of real users, real data, real edge cases. It broke in ways our evals never caught. Now leadership wants ROI and we can’t even reproduce the failure.",
-          a: "— Composite of 30+ scoping calls, 2025–2026"
+          a: "– Composite of 30+ scoping calls, 2025–2026"
         },
         {
           h: "“We picked a model. Now we are hostage to it.”",
           q:
             "Switching costs were supposed to be low. They are not. Our prompts, tool wrappers, and fine-tunes all assume the current vendor’s behavior. Their price went up 30% at renewal and we cannot move in time.",
-          a: "— Composite of 30+ scoping calls, 2025–2026"
+          a: "– Composite of 30+ scoping calls, 2025–2026"
         },
         {
           h: "“We have an EU AI Act enforcement-window problem.”",
           q:
             "Some of what we built falls under Annex III of the EU AI Act. Compliance flagged it last month. Engineering says the architecture was not designed for audit logs, traceability, or human-in-the-loop gates. Nobody owns the fix.",
-          a: "— Composite of 30+ scoping calls, 2025–2026"
+          a: "– Composite of 30+ scoping calls, 2025–2026"
         }
       ]
     },
@@ -419,26 +419,31 @@ window.AVAD_I18N = {
         {
           h: "Engagements",
           links: [
-            "Production Agent Build",
-            "Eval Audit & Rebuild",
-            "Embedded Capability Build",
-            "Compliance Readiness",
-            "Model-Portable Architecture",
-            "AI Strategy for Boards"
+            { label: "Production Agent Build", href: "#services" },
+            { label: "Eval Audit & Rebuild", href: "#services" },
+            { label: "Embedded Capability Build", href: "#services" },
+            { label: "Compliance Readiness", href: "#services" },
+            { label: "Model-Portable Architecture", href: "#services" },
+            { label: "AI Strategy for Boards", href: "#services" }
           ]
         },
         {
           h: "Practice",
           links: [
-            "Eval methodology",
-            "Capability rubric",
-            "Failure-mode taxonomy",
-            "What we publish"
+            { label: "Eval methodology", href: "#cred" },
+            { label: "Capability rubric", href: "#why" },
+            { label: "Failure-mode taxonomy", href: "#cred" },
+            { label: "What we publish", href: "#cred" }
           ]
         },
         {
           h: "Firm",
-          links: ["Scoping call", "Privacy", "DPA / BAA", "scoping@avad.ai"]
+          links: [
+            { label: "Scoping call", href: "#book" },
+            { label: "Privacy", href: "mailto:scoping@avad.ai?subject=Privacy%20notice%20request" },
+            { label: "DPA / BAA", href: "mailto:scoping@avad.ai?subject=DPA%2FBAA%20request" },
+            { label: "scoping@avad.ai", href: "mailto:scoping@avad.ai" }
+          ]
         }
       ],
       stamp: "Facts last verified: 2026-05-04",
@@ -512,19 +517,19 @@ window.AVAD_I18N = {
           h: "«شحنّا عرضًا واحدًا للذكاء الاصطناعي. لا نستطيع شحن ثانٍ.»",
           q:
             "بدا الوكيل الأول رائعًا في العرض. ثم وضعناه أمام مستخدمين حقيقيين وبيانات حقيقية وحالات حافة. انكسر بطرق لم تلتقطها تقييماتنا. الإدارة تطلب عائدًا، ونحن لا نستطيع حتى إعادة إنتاج الفشل.",
-          a: "— خلاصة من 30+ مكالمة تأطير، 2025–2026"
+          a: "– خلاصة من 30+ مكالمة تأطير، 2025–2026"
         },
         {
           h: "«اخترنا نموذجًا. أصبحنا رهينة له.»",
           q:
             "كان من المفترض أن تكون تكاليف التبديل منخفضة، وهي ليست كذلك. كل مُحفِّزاتنا وأغلفة أدواتنا وعمليات الضبط الدقيق لدينا تفترض سلوك المزوّد الحالي. ارتفع سعره 30% عند التجديد، ولا نستطيع الانتقال في الوقت المتاح.",
-          a: "— خلاصة من 30+ مكالمة تأطير، 2025–2026"
+          a: "– خلاصة من 30+ مكالمة تأطير، 2025–2026"
         },
         {
           h: "«لدينا مشكلة نافذة إلزام في EU AI Act.»",
           q:
             "بعض ما بنيناه يقع ضمن الملحق الثالث من قانون الذكاء الاصطناعي الأوروبي. أشار الامتثال إلى ذلك الشهر الماضي. الهندسة تقول إن البنية لم تُصمَّم لسجلات التدقيق والتتبع وبوابات الإشراف البشري. لا أحد يملك الإصلاح.",
-          a: "— خلاصة من 30+ مكالمة تأطير، 2025–2026"
+          a: "– خلاصة من 30+ مكالمة تأطير، 2025–2026"
         }
       ]
     },
@@ -847,26 +852,31 @@ window.AVAD_I18N = {
         {
           h: "الارتباطات",
           links: [
-            "بناء وكيل إنتاجي",
-            "تدقيق وإعادة بناء حزمة التقييم",
-            "بناء قدرات مدمجة",
-            "الجاهزية للامتثال",
-            "بنية قابلة لنقل النموذج",
-            "استراتيجية الذكاء الاصطناعي للمجلس"
+            { label: "بناء وكيل إنتاجي", href: "#services" },
+            { label: "تدقيق وإعادة بناء حزمة التقييم", href: "#services" },
+            { label: "بناء قدرات مدمجة", href: "#services" },
+            { label: "الجاهزية للامتثال", href: "#services" },
+            { label: "بنية قابلة لنقل النموذج", href: "#services" },
+            { label: "استراتيجية الذكاء الاصطناعي للمجلس", href: "#services" }
           ]
         },
         {
           h: "الممارسة",
           links: [
-            "منهجية التقييم",
-            "مقياس القدرات",
-            "تصنيف أوضاع الفشل",
-            "ما ننشره"
+            { label: "منهجية التقييم", href: "#cred" },
+            { label: "مقياس القدرات", href: "#why" },
+            { label: "تصنيف أوضاع الفشل", href: "#cred" },
+            { label: "ما ننشره", href: "#cred" }
           ]
         },
         {
           h: "الشركة",
-          links: ["مكالمة تأطير", "الخصوصية", "DPA / BAA", "scoping@avad.ai"]
+          links: [
+            { label: "مكالمة تأطير", href: "#book" },
+            { label: "الخصوصية", href: "mailto:scoping@avad.ai?subject=Privacy%20notice%20request" },
+            { label: "DPA / BAA", href: "mailto:scoping@avad.ai?subject=DPA%2FBAA%20request" },
+            { label: "scoping@avad.ai", href: "mailto:scoping@avad.ai" }
+          ]
         }
       ],
       stamp: "آخر تحقق من الوقائع: 2026-05-04",

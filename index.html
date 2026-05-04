@@ -127,7 +127,7 @@
             </div>
             <p data-key="services.sub">Filter by the situation you are in. Each card opens to scope, ideal buyer, and engagement shape.</p>
           </div>
-          <div class="chip-row" id="chipRow" role="tablist" aria-label="Filter services"></div>
+          <div class="chip-row" id="chipRow" role="toolbar" aria-label="Filter services"></div>
           <div class="svc-grid" id="svcGrid"></div>
         </div>
       </section>
@@ -240,7 +240,15 @@
     <script>
       // ===== Renderer =====
       (function () {
-        var STATE = { lang: localStorage.getItem("avad.lang") || "en" };
+        function readLang() {
+          try { return localStorage.getItem("avad.lang") || "en"; }
+          catch (e) { return "en"; }
+        }
+        function writeLang(v) {
+          try { localStorage.setItem("avad.lang", v); }
+          catch (e) { /* storage unavailable; in-memory state still works */ }
+        }
+        var STATE = { lang: readLang() };
 
         function el(tag, attrs, kids) {
           var n = document.createElement(tag);
@@ -487,7 +495,9 @@
           });
           t.footer.groups.forEach(function (g) {
             var ul = el("ul");
-            g.links.forEach(function (l) { ul.appendChild(el("li", {}, [el("a", { href: "#", text: l })])); });
+            g.links.forEach(function (l) {
+              ul.appendChild(el("li", {}, [el("a", { href: l.href, text: l.label })]));
+            });
             fg.appendChild(el("div", {}, [el("h4", { text: g.h }), ul]));
           });
         }
@@ -509,7 +519,7 @@
         document.querySelectorAll(".lang-toggle button").forEach(function (b) {
           b.addEventListener("click", function () {
             STATE.lang = b.getAttribute("data-lang");
-            localStorage.setItem("avad.lang", STATE.lang);
+            writeLang(STATE.lang);
             render();
           });
         });
