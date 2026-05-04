@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <title>avad.ai · AI agents that hold up in production</title>
+    <meta name="description" content="avad.ai engineers AI agents that hold up to your evals, your data, and your auditors. Model-agnostic by contract. EU AI Act + Saudi PDPL fluent." />
+    <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/i18n.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-key="skip">Skip to content</a>
+
+    <!-- Top utility bar -->
+    <div class="toputility" aria-hidden="false">
+      <div class="wrap">
+        <span class="pill">
+          <span class="dot" aria-hidden="true"></span>
+          <span data-key="util.status">Production AI engineering · EU + KSA enforcement-window ready</span>
+        </span>
+        <span class="meta">
+          <a href="mailto:scoping@avad.ai" data-key="util.contact">scoping@avad.ai</a>
+          <span data-key="util.phone">Riyadh · Frankfurt · Remote</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="wrap nav">
+        <a href="#" class="brand" aria-label="avad.ai">
+          <img src="assets/logo-mark.svg" alt="avad.ai" class="logo" />
+        </a>
+        <nav class="nav-links" id="navLinks" aria-label="Primary">
+          <a href="#services" data-key="nav.services">Services</a>
+          <a href="#process" data-key="nav.how">How we work</a>
+          <a href="#why" data-key="nav.why">Why avad.ai</a>
+          <a href="#cred" data-key="nav.cred">Credibility</a>
+          <a href="#faq" data-key="nav.faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button type="button" data-lang="en" class="is-active">EN</button>
+            <button type="button" data-lang="ar">عربي</button>
+          </div>
+          <button type="button" class="menu-btn" id="menuBtn" aria-controls="navLinks" aria-expanded="false" aria-label="Open menu"><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="grid-bg" aria-hidden="true"></div>
+        <div class="wrap hero-grid">
+          <div>
+            <span class="eyebrow">
+              <span class="dot" aria-hidden="true"></span>
+              <span data-key="hero.eyebrow">Engineering firm · Model-agnostic by contract</span>
+            </span>
+            <h1>
+              <span data-key="hero.h1a">AI agents that </span><span class="underline accent" data-key="hero.h1b">hold up</span><span data-key="hero.h1c"> in production.</span>
+            </h1>
+            <p class="lede" data-key="hero.lede">avad.ai builds AI agents you can put in production, builds the teams that run them, and publishes the open tools the field depends on. Model-agnostic by contract.</p>
+            <div class="hero-meta">
+              <span><strong data-key="hero.meta1">First useful artifact in week 1.</strong></span>
+              <span class="sep" aria-hidden="true"></span>
+              <span data-key="hero.meta2">First working agent by week 4.</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span data-key="hero.meta3">EU AI Act + Saudi PDPL fluent.</span>
+            </div>
+          </div>
+
+          <!-- Hero artifact -->
+          <aside class="artifact" aria-label="Sample eval suite output">
+            <div class="bar">
+              <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="file" data-key="artifact.title">evals/trajectory_suite</span>
+              <span class="tag" data-key="artifact.tag">in client repo</span>
+            </div>
+            <div class="body" id="artifactBody">
+              <!-- rows + summary injected by JS -->
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Proof / artifact strip -->
+      <section class="proofbar" style="padding: 28px 0;">
+        <div class="wrap">
+          <div class="head" data-key="proof.head">What avad.ai ships, by default</div>
+          <div class="artifact-strip" id="artifactStrip"></div>
+        </div>
+      </section>
+
+      <!-- Problems -->
+      <section class="problems" id="problems">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="section-tag" data-key="problem.tag">The room you are walking into</div>
+              <h2 data-key="problem.h2">Three sentences we hear in every scoping call.</h2>
+            </div>
+            <p data-key="problem.sub">Composite of 30+ scoping calls in 2025–2026. Heads of AI, CTOs, COOs.</p>
+          </div>
+          <div class="quote-grid" id="quoteGrid"></div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="services" id="services">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="section-tag" data-key="services.tag">Services</div>
+              <h2 data-key="services.h2">Six engagements. Fixed scope. Written success criteria.</h2>
+            </div>
+            <p data-key="services.sub">Filter by the situation you are in. Each card opens to scope, ideal buyer, and engagement shape.</p>
+          </div>
+          <div class="chip-row" id="chipRow" role="toolbar" aria-label="Filter services"></div>
+          <div class="svc-grid" id="svcGrid"></div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="process" id="process">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="section-tag" data-key="process.tag">How we work</div>
+              <h2 data-key="process.h2">Four steps. Concrete deliverables, not phases.</h2>
+            </div>
+            <p data-key="process.sub">Every engagement closes with the artifacts your team needs to operate the system without us on the critical path.</p>
+          </div>
+          <div class="steps" id="stepsGrid"></div>
+        </div>
+      </section>
+
+      <!-- Why -->
+      <section class="why" id="why">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="section-tag" data-key="why.tag">Why avad.ai</div>
+              <h2 data-key="why.h2">Three differentiators. Each backed by an artifact, not an adjective.</h2>
+            </div>
+            <p data-key="why.sub">If we cannot measure it, we do not ship it. Each of the three lines below has a published artifact attached.</p>
+          </div>
+          <div class="why-grid" id="whyGrid"></div>
+        </div>
+      </section>
+
+      <!-- Credibility -->
+      <section class="cred" id="cred">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="section-tag" data-key="cred.tag">Technical credibility</div>
+              <h2 data-key="cred.h2">Specifics, not badges.</h2>
+            </div>
+            <p data-key="cred.sub">Models we work with, evaluation methodology, security and compliance posture. Date-stamped at the bottom.</p>
+          </div>
+          <div class="cred-grid" id="credGrid"></div>
+          <p class="cred-stamp" data-key="cred.stamp">Facts and figures last verified: 2026-05-04.</p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq" id="faq">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="section-tag" data-key="faq.tag">FAQ</div>
+              <h2 data-key="faq.h2">Eight questions sophisticated buyers ask.</h2>
+            </div>
+            <p data-key="faq.sub">Anchor links per question. Deep-link from a sales email.</p>
+          </div>
+          <div class="faq-controls">
+            <button type="button" id="expandAll" data-key="faq.expandAll">Expand all</button>
+            <button type="button" id="collapseAll" data-key="faq.collapseAll">Collapse all</button>
+          </div>
+          <div class="faq-list" id="faqList"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="wrap foot-grid" id="footGrid">
+        <div class="foot-brand">
+          <a href="#" class="brand foot-brand-link">
+            <img src="assets/logo-mark-light.svg" alt="avad.ai" class="logo foot-logo" />
+          </a>
+          <p class="blurb" data-key="footer.blurb">Engineering firm building AI agents that hold up to your evals, your data, and your auditors. Riyadh · Frankfurt · Remote.</p>
+        </div>
+        <!-- groups injected -->
+      </div>
+      <div class="wrap foot-bot">
+        <span class="stamp" data-key="footer.stamp">Facts last verified: 2026-05-04</span>
+        <span data-key="footer.legal">© 2026 avad.ai. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script>
+      // ===== Renderer =====
+      (function () {
+        function readLang() {
+          try { return localStorage.getItem("avad.lang") || "en"; }
+          catch (e) { return "en"; }
+        }
+        function writeLang(v) {
+          try { localStorage.setItem("avad.lang", v); }
+          catch (e) { /* storage unavailable; in-memory state still works */ }
+        }
+        var STATE = { lang: readLang() };
+
+        function el(tag, attrs, kids) {
+          var n = document.createElement(tag);
+          if (attrs) Object.keys(attrs).forEach(function (k) {
+            if (k === "class") n.className = attrs[k];
+            else if (k === "html") n.innerHTML = attrs[k];
+            else if (k === "text") n.textContent = attrs[k];
+            else if (k.indexOf("on") === 0) n.addEventListener(k.slice(2), attrs[k]);
+            else n.setAttribute(k, attrs[k]);
+          });
+          (kids || []).forEach(function (c) {
+            if (c == null) return;
+            n.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+          });
+          return n;
+        }
+
+        function getKey(obj, path) {
+          return path.split(".").reduce(function (a, k) { return a == null ? a : a[k]; }, obj);
+        }
+
+        function render() {
+          var t = window.AVAD_I18N[STATE.lang];
+          document.documentElement.lang = t.lang;
+          document.documentElement.dir = t.dir;
+          document.title = STATE.lang === "ar"
+            ? "أفاد · وكلاء ذكاء اصطناعي يصمدون في الإنتاج"
+            : "avad.ai · AI agents that hold up in production";
+
+          // Simple text bindings
+          document.querySelectorAll("[data-key]").forEach(function (n) {
+            var v = getKey(t, n.getAttribute("data-key"));
+            if (typeof v === "string") n.textContent = v;
+          });
+
+          // Lang toggle active state
+          document.querySelectorAll(".lang-toggle button").forEach(function (b) {
+            b.classList.toggle("is-active", b.getAttribute("data-lang") === STATE.lang);
+          });
+
+          // ===== Artifact =====
+          var ab = document.getElementById("artifactBody");
+          ab.innerHTML = "";
+          t.artifact.rows.forEach(function (r) {
+            ab.appendChild(
+              el("div", { class: "row" }, [
+                el("span", { class: "name", text: r.name }),
+                el("span", { class: "num", text: r.num }),
+                el("span", { class: r.state, text: r.label })
+              ])
+            );
+          });
+          var sum = el("div", { class: "summary" });
+          t.artifact.stats.forEach(function (s) {
+            sum.appendChild(
+              el("div", { class: "stat" }, [
+                el("div", { class: "k", text: s.k }),
+                el("div", { class: "v " + (s.cls || ""), text: s.v })
+              ])
+            );
+          });
+          ab.appendChild(sum);
+
+          // ===== Artifact strip =====
+          var as = document.getElementById("artifactStrip");
+          as.innerHTML = "";
+          t.proof.strip.forEach(function (c) {
+            as.appendChild(
+              el("div", { class: "chip" }, [
+                el("div", { class: "label", text: c.label }),
+                el("div", { class: "val", text: c.val })
+              ])
+            );
+          });
+
+          // ===== Problem quotes =====
+          var qg = document.getElementById("quoteGrid");
+          qg.innerHTML = "";
+          t.problem.quotes.forEach(function (q) {
+            qg.appendChild(
+              el("article", { class: "quote-card" }, [
+                el("div", { class: "qmark", text: "“" }),
+                el("h3", { text: q.h }),
+                el("blockquote", { text: q.q }),
+                el("div", { class: "attrib", text: q.a })
+              ])
+            );
+          });
+
+          // ===== Services =====
+          var cr = document.getElementById("chipRow");
+          cr.innerHTML = "";
+          t.services.chips.forEach(function (label, i) {
+            cr.appendChild(
+              el("button", {
+                type: "button",
+                class: "chip" + (i === 0 ? " is-active" : ""),
+                "data-filter": label,
+                onclick: function (e) { applyFilter(label, e.currentTarget); }
+              }, [label])
+            );
+          });
+
+          var sg = document.getElementById("svcGrid");
+          sg.innerHTML = "";
+          t.services.list.forEach(function (s) {
+            var ul = el("ul");
+            s.scope.forEach(function (item) { ul.appendChild(el("li", { text: item })); });
+
+            var meta = el("div", { class: "meta-card" }, [
+              el("div", { class: "k", text: t.services.labels.buyer }),
+              el("div", { class: "v", text: s.buyer }),
+              el("div", { class: "k", text: t.services.labels.shape }),
+              el("div", { class: "v", text: s.shape }),
+              el("span", { class: "tag-buyer", text: s.tag })
+            ]);
+
+            var det = el("details", { class: "svc", "data-tags": (s.tags || []).join("|") });
+            det.appendChild(
+              el("summary", {}, [
+                el("div", { class: "top" }, [
+                  el("div", { class: "num", text: s.num }),
+                  el("h3", { text: s.h }),
+                  el("div", { class: "promise", text: s.promise })
+                ]),
+                el("span", { class: "toggle", "aria-hidden": "true", html: "<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round'><path d='M12 5v14M5 12h14'/></svg>" })
+              ])
+            );
+            det.appendChild(
+              el("div", { class: "body" }, [
+                el("div", {}, [
+                  el("h4", { text: t.services.labels.scope }),
+                  ul
+                ]),
+                meta
+              ])
+            );
+            sg.appendChild(det);
+          });
+
+          // ===== Steps =====
+          var stg = document.getElementById("stepsGrid");
+          stg.innerHTML = "";
+          t.process.steps.forEach(function (st) {
+            var ul = el("ul");
+            st.items.forEach(function (it) { ul.appendChild(el("li", { text: it })); });
+            stg.appendChild(
+              el("div", { class: "step" }, [
+                el("div", { class: "num", text: st.num }),
+                el("div", { class: "when", text: st.when }),
+                el("h3", { text: st.h }),
+                el("div", { class: "out-label", text: st.out }),
+                ul
+              ])
+            );
+          });
+
+          // ===== Why cards =====
+          var wg = document.getElementById("whyGrid");
+          wg.innerHTML = "";
+          t.why.cards.forEach(function (c) {
+            wg.appendChild(
+              el("div", { class: "why-card" }, [
+                el("div", { class: "icon", html: "<svg width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z'/></svg>" }),
+                el("h3", { text: c.h }),
+                el("p", { text: c.p }),
+                el("div", { class: "rubric" }, [
+                  el("div", { text: c.rubric.label }),
+                  el("div", { class: "lr" }, [
+                    el("span", { text: c.rubric.v }),
+                    el("span", { text: c.rubric.pct + "%" })
+                  ]),
+                  el("div", { class: "bar" }, [el("i", { style: "width:" + c.rubric.pct + "%" })])
+                ])
+              ])
+            );
+          });
+
+          // ===== Credibility =====
+          var cg = document.getElementById("credGrid");
+          cg.innerHTML = "";
+          t.cred.cards.forEach(function (c) {
+            var body;
+            if (c.type === "pills") {
+              var pl = el("div", { class: "pill-list" });
+              c.items.forEach(function (p) { pl.appendChild(el("span", { text: p })); });
+              body = pl;
+            } else {
+              var ul = el("ul");
+              c.items.forEach(function (it) {
+                ul.appendChild(
+                  el("li", {}, [
+                    el("span", { class: "check", html: "<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>" }),
+                    el("span", { text: it })
+                  ])
+                );
+              });
+              body = ul;
+            }
+            var card = el("div", { class: "cred-card" }, [el("h3", { text: c.h }), body]);
+            if (c.foot) card.appendChild(el("p", { class: "cred-card-foot", text: c.foot }));
+            cg.appendChild(card);
+          });
+
+          // ===== FAQ =====
+          var fl = document.getElementById("faqList");
+          fl.innerHTML = "";
+          t.faq.items.forEach(function (item, i) {
+            var det = el("details", { id: "faq-" + (i + 1) });
+            det.appendChild(
+              el("summary", {}, [
+                el("span", { text: item.q }),
+                el("span", { class: "toggle", "aria-hidden": "true", html: "<svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round'><path d='M12 5v14M5 12h14'/></svg>" })
+              ])
+            );
+            det.appendChild(el("div", { class: "answer", text: item.a }));
+            fl.appendChild(det);
+          });
+
+          // ===== Footer groups =====
+          var fg = document.getElementById("footGrid");
+          // remove existing groups (keep brand block)
+          Array.prototype.slice.call(fg.children).forEach(function (c, i) {
+            if (i > 0) fg.removeChild(c);
+          });
+          t.footer.groups.forEach(function (g) {
+            var ul = el("ul");
+            g.links.forEach(function (l) {
+              ul.appendChild(el("li", {}, [el("a", { href: l.href, text: l.label })]));
+            });
+            fg.appendChild(el("div", {}, [el("h4", { text: g.h }), ul]));
+          });
+        }
+
+        function applyFilter(label, btn) {
+          document.querySelectorAll("#chipRow .chip").forEach(function (c) {
+            c.classList.toggle("is-active", c === btn);
+          });
+          var t = window.AVAD_I18N[STATE.lang];
+          var allLabel = t.services.chips[0];
+          document.querySelectorAll("#svcGrid .svc").forEach(function (s) {
+            var tags = (s.getAttribute("data-tags") || "").split("|");
+            var match = label === allLabel || tags.indexOf(label) !== -1;
+            s.style.display = match ? "" : "none";
+          });
+        }
+
+        // ===== Lang toggle =====
+        document.querySelectorAll(".lang-toggle button").forEach(function (b) {
+          b.addEventListener("click", function () {
+            STATE.lang = b.getAttribute("data-lang");
+            writeLang(STATE.lang);
+            render();
+          });
+        });
+
+        // ===== Mobile menu =====
+        var menuBtn = document.getElementById("menuBtn");
+        var navLinks = document.getElementById("navLinks");
+        menuBtn.addEventListener("click", function () {
+          var open = navLinks.classList.toggle("is-open");
+          menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+        navLinks.addEventListener("click", function (e) {
+          if (e.target.tagName === "A") {
+            navLinks.classList.remove("is-open");
+            menuBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // ===== FAQ expand / collapse =====
+        document.getElementById("expandAll").addEventListener("click", function () {
+          document.querySelectorAll("#faqList details").forEach(function (d) { d.open = true; });
+        });
+        document.getElementById("collapseAll").addEventListener("click", function () {
+          document.querySelectorAll("#faqList details").forEach(function (d) { d.open = false; });
+        });
+
+        render();
+      })();
+    </script>
+  </body>
+</html>
