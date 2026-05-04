@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3.3] - 2026-05-05
+
+### Changed
+- `site/src/components/ServicesSection.astro` — increased services metadata label readability in the expanded service panels: `IDEAL BUYER` / `ENGAGEMENT SHAPE` now use 12px mono, weight 500, and tighter 0.04em tracking.
+- `VERSION` and `site/package.json` bumped to `0.0.3.3`.
+
 ## [0.0.3.2] - 2026-05-04
 
 ### Added
