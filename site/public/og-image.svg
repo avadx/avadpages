@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#0E0E0D"/>
+  <g transform="translate(440, 90) scale(0.38)">
+    <path fill="#FFFFFF" d="M652.81,326.8v45.13c-46.67-34.11-104.12-54.3-166.22-54.3-155.7,0-282.38,126.67-282.38,282.38s126.67,282.38,282.38,282.38c62.1,0,119.55-20.2,166.22-54.3v44.83h125.84V326.8h-125.84ZM486.59,756.54c-86.31,0-156.53-70.22-156.53-156.54s70.22-156.54,156.53-156.54,156.54,70.22,156.54,156.54-70.22,156.54-156.54,156.54Z"/>
+    <circle cx="912.02" cy="798.62" r="83.76" fill="#FC6530"/>
+  </g>
+  <text x="600" y="590" text-anchor="middle" fill="#A8A7A4" font-family="DIN Next LT Arabic, Helvetica Neue, sans-serif" font-size="22" letter-spacing="3.5" font-weight="500">AI AGENTS THAT HOLD UP IN PRODUCTION</text>
+</svg>

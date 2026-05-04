@@ -120,10 +120,18 @@ const { t, currentLocale } = Astro.props;
     margin-block-end: var(--sp-xs);
     font-family: var(--font-mono);
     font-weight: 500;
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.14em;
     color: var(--muted);
+  }
+
+  [lang="ar"] .site-footer__group-h,
+  html[dir="rtl"] .site-footer__group-h {
+    font-family: var(--font-body);
+    font-size: 14px;
+    letter-spacing: 0;
+    text-transform: none;
   }
 
   .site-footer__group ul {
