@@ -28,7 +28,7 @@ function slug(s: string, idx: number) {
             <summary class="faq__q">
               <span class="faq__num">{String(idx + 1).padStart(2, "0")}</span>
               <span class="faq__q-text">{item.q}</span>
-              <span class="faq__indicator" aria-hidden="true"></span>
+              <span class="faq__toggle" aria-hidden="true">+</span>
             </summary>
             <div class="faq__a">
               <p>{item.a}</p>
@@ -94,37 +94,28 @@ function slug(s: string, idx: number) {
     color: var(--muted);
   }
 
-  .faq__indicator {
-    width: 14px;
-    height: 14px;
-    position: relative;
+  .faq__toggle {
     justify-self: end;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid var(--rule);
+    font-family: var(--font-mono);
+    font-size: 16px;
+    line-height: 1;
+    color: var(--structure);
+    transition:
+      transform var(--dur-short) var(--ease-out),
+      color var(--dur-short) var(--ease-out),
+      border-color var(--dur-short) var(--ease-out);
   }
 
-  .faq__indicator::before,
-  .faq__indicator::after {
-    content: "";
-    position: absolute;
-    inset-inline-start: 50%;
-    top: 50%;
-    background: var(--ink);
-    transition: transform var(--dur-short) var(--ease-out);
-  }
-
-  .faq__indicator::before {
-    width: 12px;
-    height: 1px;
-    transform: translate(-50%, -50%);
-  }
-
-  .faq__indicator::after {
-    width: 1px;
-    height: 12px;
-    transform: translate(-50%, -50%);
-  }
-
-  .faq__details[open] .faq__indicator::after {
-    transform: translate(-50%, -50%) scaleY(0);
+  .faq__details[open] .faq__toggle {
+    color: var(--ink);
+    border-color: var(--ink);
+    transform: rotate(45deg);
   }
 
   .faq__a {

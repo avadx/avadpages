@@ -113,10 +113,17 @@ const labels = t.services.labels;
   }
 
   .svc__promise {
-    font-family: var(--font-mono);
-    font-size: 12px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.5;
     color: var(--muted);
     text-align: end;
+  }
+
+  [lang="ar"] .svc__promise,
+  html[dir="rtl"] .svc__promise {
+    font-size: 16px;
+    line-height: 1.7;
   }
 
   .svc__toggle {
