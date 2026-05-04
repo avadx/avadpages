@@ -96,10 +96,18 @@ const { t } = Astro.props;
   .why-card__rubric-label {
     margin: 0 0 10px;
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.14em;
     color: var(--muted);
+  }
+
+  [lang="ar"] .why-card__rubric-label,
+  html[dir="rtl"] .why-card__rubric-label {
+    font-family: var(--font-body);
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
   }
 
   .why-card__rubric-lr {
