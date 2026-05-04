@@ -92,9 +92,13 @@ const { t, homeHref, currentLocale } = Astro.props;
       root.setAttribute("data-theme", next);
       localStorage.setItem("theme", next);
       syncLabel();
-      // Drop focus so the orange focus-visible ring does not persist after a
-      // touch tap, which has nowhere else to move focus to.
-      button.blur();
+      // Drop focus only when the activation was not keyboard. Touch and
+      // mouse leave a sticky focus ring with nothing to move it onto;
+      // keyboard activation must keep focus so the user does not lose their
+      // place in the tab order.
+      if (!button.matches(":focus-visible")) {
+        button.blur();
+      }
     });
   })();
 </script>
