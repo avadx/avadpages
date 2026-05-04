@@ -9,16 +9,19 @@
 
 # 1. Research Brief
 
-*Word target: ≤ 400 words. Actual: ~330.*
+*Word target: ≤ 400 words. Actual: ~370.*
 
 ### Trends (Q1 to Q2 2026)
-The shift is from demos to production. 88% of agent pilots never ship; 41% of enterprises had a production rollback in the last 12 months (Datadog State of AI Engineering, March 2026). Agents with full eval coverage rolled back 9% versus 47% without. There is a 37% gap between lab-benchmark and real-world performance, with 50x cost variation at equivalent accuracy. MCP (Anthropic) and A2A (Google) are emerging as the connective tissue between agents, tools, and other agents. Smaller multimodal reasoning models, tuned for vertical work, are eroding the case for one frontier model on every task. Gartner expects 40% of enterprise applications to embed agents by end of 2026, up from under 5% a year earlier, but only 17% of organizations have shipped one in production today.
+The shift is from demos to production. 88% of agent pilots never ship; 41% of enterprises had a production rollback last year (Datadog, March 2026). Agents with full eval coverage rolled back 9% versus 47% without. MCP (donated to the Linux Foundation, December 2025) and A2A are the emerging protocol layer between agents and tools; the public MCP Registry lists more than 10,000 servers. Gartner expects 40% of enterprise applications to embed agents by end of 2026, up from under 5% a year earlier; only 17% have shipped today.
+
+### Regulatory context (EU, KSA)
+The EU AI Act Annex III deadline lands August 2, 2026; AI literacy is now an EU AI Act requirement, while only 35% of leaders run a mature workforce upskilling program. In Saudi Arabia, SDAIA's PDPL enforcement issued 48 violation decisions in 2025 to early 2026, with fines up to SAR 5M per breach and cross-border transfer rules under active enforcement. The two regimes overlap on logging, oversight, and risk management; they diverge on data localization.
 
 ### Competitive landscape
-Scale AI sells data and foundation-model evaluation. Cohere and Aleph Alpha (post-merger, $20B) sell sovereign enterprise AI for regulated sectors. Mistral, via the Accenture partnership, sells European-grade AI with a strategic-autonomy angle. Hyperscaler partner programs (Anthropic Solutions Partners, OpenAI's enterprise channel) sell rapid integration with frontier models. Hero copy across the category leans on the same vocabulary: transform, accelerate, unlock, harness. Service taxonomies are nearly identical: strategy, discovery, build, managed services. CTAs read "book a demo." Differentiation collapses into adjective stacks.
+Scale AI sells data and foundation-model evaluation. Cohere and Aleph Alpha (post-merger, $20B) sell sovereign enterprise AI for regulated sectors. Mistral, with Accenture, sells European-grade AI with strategic-autonomy framing. Hero copy leans on the same vocabulary: transform, accelerate, unlock, harness. Service taxonomies are nearly identical: strategy, discovery, build, managed services. CTAs read "book a demo."
 
 ### Buyer pain (2026)
-Heads of AI, CTOs, and COOs are not asking "should we use AI?" They are asking: how do we prove ROI to the board after our last pilot died at the eval stage? How do we pick a model without locking into a vendor whose price compounds every 12 months? How do we hit August 2026 EU AI Act readiness for high-risk Annex III systems without halting the roadmap? How do we tell agent reliability from agent theater?
+Heads of AI, CTOs, and COOs are not asking "should we use AI?" They are asking: how do we prove ROI to the board after our last pilot died at the eval stage; how do we hit August 2026 EU AI Act and Saudi PDPL deadlines without halting the roadmap; how do we tell agent reliability from agent theater; and how do we build the team that runs this without depending on a vendor forever.
 
 ### Vocabulary audit (15 banned terms with concrete replacements)
 revolutionize → ship; unlock → make available; harness the power of → use; cutting-edge → recent; game-changing → measurably better; leverage → use; empower → enable; seamless → without integration overhead; robust → tested under failure; world-class → benchmarked against [X]; next-generation → current-state; disrupt → replace; synergy → coordination; transformative → measurable; paradigm shift → architectural change.
@@ -27,26 +30,32 @@ revolutionize → ship; unlock → make available; harness the power of → use;
 
 # 2. Strategy
 
-### Primary positioning sentence
-**avad.ai engineers AI agents that hold up to your evals, your data, and your auditors.**
+### Primary positioning
 
-One sentence. Names three concrete audiences (the engineering team, the security team, the compliance team). No jargon, no "we believe."
+**Primary sentence:** avad.ai engineers AI agents that hold up to your evals, your data, and your auditors.
+
+**Extension (used in the subhead and across the deck):** We also build the teams that run them, and publish the open tools the field depends on.
+
+The first sentence names three concrete audiences (engineering, security, compliance). The extension names the three things avad.ai delivers (build, teach, publish). Together they establish that avad.ai is a knowledge-and-engineering firm, not a vendor that hides behind a black box. No jargon, no "we believe."
 
 ### Three differentiators (defensible, method-backed)
 
 1. **Eval suite ships with the agent.** Every engagement ends with a regression-grade eval suite committed to the client's repo. Trajectory coverage, failure-mode taxonomy, CI integration, rollback budget. The eval is the artifact.
 2. **Model-agnostic by contract.** Systems are designed at the protocol layer (MCP, A2A) before a model is chosen. Every engagement includes a documented swap plan and a measured baseline across at least two providers.
-3. **Compliance scoped at architecture.** EU AI Act Annex III classification, audit logging, human-oversight gates, and data-residency constraints land in the design phase, not the launch retro.
+3. **Capability transfers to your team.** We embed eval design, model-contract review, and compliance practice in your engineers' weekly work, not in a slide deck. By handover, the people who ship the next version are yours, not ours. We are not on the critical path after week 12. Capability is measured against a published rubric, before and after.
+
+(Compliance practice across EU AI Act Annex III, Saudi PDPL, and sector regulators lives inside the engagement architecture and inside the Compliance Readiness service, not as a separate marketing pillar. It is a requirement, not a differentiator.)
 
 ### Target ICP
 
-**Primary:** Head of AI, VP Engineering, or CTO at a Series C through pre-IPO company (200 to 2,000 employees) in regulated or regulated-adjacent sectors (fintech, healthtech, B2B SaaS with EU customers, infrastructure, govtech).
+**Primary:** Head of AI, VP Engineering, or CTO at a growth-stage technology company (200 to 2,000 employees) in regulated or regulated-adjacent sectors (fintech, healthtech, B2B SaaS, infrastructure, govtech), with EU or KSA market exposure.
 
 **Trigger events** (any one is sufficient):
 - Board mandate to ship measurable AI ROI within two quarters.
 - Failed first agent pilot that needs a rebuild instead of another vendor demo.
-- August 2026 EU AI Act compliance gap on a high-risk system.
+- August 2026 EU AI Act compliance gap on a high-risk system, or a Saudi PDPL data-residency gap.
 - Renewal coming up with a frontier-model vendor that has raised prices.
+- Internal AI capability mandate that requires building a team, not buying a managed service.
 
 **Secondary:** CEO or COO at the same stage evaluating whether to staff in-house or partner externally for a flagship AI initiative.
 
@@ -68,8 +77,8 @@ One sentence. Names three concrete audiences (the engineering team, the security
 **Headline (7 words):**
 > AI agents that hold up in production.
 
-**Subhead (19 words):**
-> avad.ai engineers production-grade AI agents for regulated and regulated-adjacent companies. Eval suite ships with every system. Model-agnostic by contract.
+**Subhead (23 words):**
+> avad.ai engineers production-grade AI agents, builds the teams that run them, and publishes the open tools the field depends on. Model-agnostic by contract.
 
 **Primary CTA:** Book a 30-minute scoping call
 **Secondary CTA:** Read our eval methodology
@@ -106,7 +115,7 @@ Some of what we built falls under Annex III of the EU AI Act. Compliance flagged
 
 ## 3.4 Services / Solutions
 
-*Five offerings. Each: name, one-line promise, three-bullet scope, ideal buyer, engagement shape.*
+*Six offerings. Each: name, one-line promise, three-bullet scope, ideal buyer, engagement shape.*
 
 ### Production Agent Build
 **Promise:** We design, build, and harden one AI agent end to end, with the eval suite that proves it works.
@@ -128,22 +137,32 @@ Some of what we built falls under Annex III of the EU AI Act. Compliance flagged
 **Ideal buyer:** AI lead whose first system is in production but flying blind on reliability.
 **Engagement shape:** 4 to 6 weeks. Deliverable is the eval suite plus a remediation plan.
 
-### EU AI Act Readiness
-**Promise:** We map your AI systems to Annex III categories, close the documentation and architecture gaps, and stand up audit infrastructure before the August 2026 deadline.
+### AI Enablement Program
+**Promise:** Your team learns to ship and run AI in production. By handover, we are not on the critical path.
 **Scope:**
-- Annex III classification of in-scope systems.
-- Risk management, logging, and human-oversight architecture review.
-- Compliance documentation and conformity-assessment artifacts.
+- Role-based training for engineers, AI lead, and compliance: eval design, model contracts, prompt and tool review, post-incident analysis.
+- Hands-on ride-along on a real engagement (your codebase, your traffic, your failure modes), not a curriculum disconnected from production.
+- AI Center of Excellence design: governance, decision rights, escalation paths, internal review process. Includes EU AI Act literacy curriculum required by Article 4.
 
-**Ideal buyer:** General Counsel, Head of Privacy, or CTO with EU customers and an enforceable deadline.
-**Engagement shape:** 6 to 10 weeks. Deliverable is a compliance pack and remediated architecture.
+**Ideal buyer:** Head of AI building an internal team rather than a vendor stack. CTO or VP Engineering sequencing first AI deployments. Heads of Engineering whose AI specialists earn (or should earn) a senior premium.
+**Engagement shape:** 8 to 16 weeks. Deliverable is a documented playbook and a measurable team-capability rubric, scored before, during, and after. Often runs in parallel with a Production Agent Build.
+
+### Compliance Readiness (EU AI Act + Saudi PDPL)
+**Promise:** We map your AI systems to the regulations that bind them, close the documentation and architecture gaps, and stand up audit infrastructure before the deadline.
+**Scope:**
+- EU AI Act Annex III classification of in-scope systems; Saudi PDPL classification for in-Kingdom workloads; sector-specific overlay (financial, healthcare, public sector) as applicable.
+- Risk management, logging, human-oversight architecture review. Data-residency posture documented per workload.
+- Compliance documentation, conformity-assessment artifacts, SDAIA cross-border transfer documentation, and post-market monitoring plan.
+
+**Ideal buyer:** General Counsel, Head of Privacy, or CTO with EU customers, KSA customers, or both, and an enforceable deadline (August 2, 2026 for EU AI Act Annex III; ongoing PDPL enforcement).
+**Engagement shape:** 6 to 10 weeks. Deliverable is a compliance pack, remediated architecture, and a written gap-closure plan.
 
 ### Model-Agnostic Architecture
 **Promise:** We refactor your AI stack so the model is a swappable component, not a load-bearing dependency.
 **Scope:**
 - Abstraction layer over MCP and A2A. Model-agnostic prompt and tool contracts.
 - Documented swap plan with regression budget.
-- Cost, latency, and accuracy baseline across at least two providers.
+- Cost, latency, and accuracy baseline across at least two providers, with regional sovereign-model options (EU, GCC) included where they fit.
 
 **Ideal buyer:** Engineering leader negotiating a renewal, or one bracing for a model deprecation.
 **Engagement shape:** 4 to 8 weeks. Deliverable is a working swap plus documentation.
@@ -153,7 +172,7 @@ Some of what we built falls under Annex III of the EU AI Act. Compliance flagged
 **Scope:**
 - Use-case ROI modeling against your data and workflow.
 - Build, buy, or partner decision framework.
-- 12-month roadmap with eval and compliance gates.
+- 12-month roadmap with eval, compliance, and capability-build gates.
 
 **Ideal buyer:** CEO or CTO writing the AI section of next quarter's board deck.
 **Engagement shape:** 3 to 4 weeks. Deliverable is a written brief plus a working session with the board.
@@ -171,10 +190,10 @@ Some of what we built falls under Annex III of the EU AI Act. Compliance flagged
 **Output:** the agent or refactor itself; eval suite committed to your repo; weekly demo against production-shaped traffic, not curated examples.
 
 ### Step 3: Harden (final two weeks)
-**Output:** regression suite wired into your CI, rollback runbook, on-call documentation, EU AI Act conformity artifacts where applicable.
+**Output:** regression suite wired into your CI, rollback runbook, on-call documentation, conformity artifacts (EU AI Act, Saudi PDPL, sector regulators) where applicable.
 
 ### Step 4: Handover (week after launch)
-**Output:** knowledge transfer to your team, 30-day support window, written postmortem of every failure caught during build and how the eval suite caught it.
+**Output:** knowledge transfer to your team, 30-day support window, written postmortem of every failure caught during build and how the eval suite caught it. Capability rubric scored against the baseline taken in week 1.
 
 ---
 
@@ -208,31 +227,56 @@ Every engagement ends with a regression-grade eval suite committed to your repo.
 ### Model-agnostic by contract
 We design at the protocol layer (MCP and A2A) before we pick a model. Every engagement includes a documented swap plan and a measured baseline across at least two providers. You keep the option to move. We do not have a preferred provider; we have measured baselines.
 
-### Compliance scoped at architecture
-We classify systems against Annex III before writing code. Audit logging, human-oversight gates, and data-residency constraints land in the design phase, not the launch retro. EU AI Act readiness is a checklist by build week three, not a fire drill in July.
+### Capability transfers to your team
+Every engagement is structured so your team owns the system at the end. We embed eval design, model-contract review, and compliance practice in your engineers' weekly work, not in a slide deck. By handover, the people who ship the next version are yours, not ours. We are not on the critical path after week 12. We measure capability against a published rubric, before and after, and we publish the rubric. Compliance practice (EU AI Act Annex III, Saudi PDPL, sector regulators) is part of the curriculum, scoped at architecture from the design phase.
 
 ---
 
 ## 3.8 Technical Credibility
 
 ### Models we work with
-Frontier models (Anthropic Claude, OpenAI GPT family, Google Gemini), open-weight models (Mistral, Llama derivatives, Qwen), and self-hosted deployments. We do not have a preferred provider. We have measured baselines per use case.
+Frontier models (Anthropic Claude, OpenAI GPT family, Google Gemini), open-weight models (Mistral, Llama derivatives, Qwen), regional sovereign models on request, and self-hosted deployments. We do not have a preferred provider. We have measured baselines per use case.
+
+### Multilingual evaluation
+Non-English performance is a first-class evaluation lane on every applicable engagement: language-specific retrieval quality, dialectal coverage, and hallucination rates measured against locale-appropriate prompts. We do not treat localization as a translation layer bolted on at the end.
 
 ### Eval methodology
-Every system we ship is evaluated at three levels: final-output, intermediate-step, and full-trajectory. The test framework is documented in the repo. Suite is wired into your CI before handover. Coverage targets are agreed up front and reported weekly during build.
+Every system we ship is evaluated at three levels: final-output, intermediate-step, and full-trajectory. The test framework is documented in the repo. Suite is wired into your CI before handover. Coverage targets are agreed up front and reported weekly during build. Methodology is published; we link to our public eval starter kits in section 3.9.
 
 ### Security and compliance
 - SOC 2 Type II: `[STATUS, with attestation date]`.
-- Data residency: EU, US, or self-hosted at your election.
-- EU AI Act: Annex III classification on in-scope systems, conformity documentation, post-market monitoring plan.
+- Data residency: Saudi Arabia (KSA region), EU, US, or self-hosted at your election. PDPL-aware by default for in-Kingdom workloads; SDAIA cross-border transfer conditions documented per engagement.
+- Saudi PDPL: classification of personal-data processing activities, lawful-basis documentation, sensitive-data localization where required, data-protection impact assessments for high-risk processing.
+- EU AI Act: Annex III classification on in-scope systems, conformity documentation, post-market monitoring plan, Article 4 AI-literacy curriculum for client staff.
 - DPAs and BAAs signed as required.
 - We do not train models on client data. Engagement contracts state this explicitly.
 
+### Open-source contributions
+We publish MCP servers, skills, plugins, and eval starter kits to the public ecosystem. Details and links in section 3.9.
+
 ---
 
-## 3.9 FAQ
+## 3.9 What We Publish
 
-*Six questions sophisticated buyers actually ask.*
+We ship free tools. Not as marketing, as practice.
+
+- **MCP servers** in the public MCP Registry. `[N]` servers across `[domain 1]`, `[domain 2]`, `[domain 3]`. Used in production by teams outside avad.ai as of `[DATE]`.
+- **Skills** for the `[skill runtime]`. `[N]` skills covering eval design, code review, debugging, planning, and multilingual workflows. Self-installable, source-available.
+- **Plugins** for `[IDE / agent runtime]`. Workflow shortcuts that compress a multi-step task into a single command.
+- **Eval starter kits** in `[language 1]` and `[language 2]`. Public on GitHub. Trajectory-level coverage out of the box. Forked by `[N]` teams.
+- **Failure-mode taxonomies** for `[domain]`, anonymized from real engagements, published as living documents on a `[CADENCE]` basis.
+
+**Why we publish.** Public artifacts pressure-test our craft in ways internal code does not. Code that ships only to clients does not get scrutinized; code that ships to the public does. The team that uses our open work is often the team that hires us, two years later. Public contributions also align with the direction the field is moving (MCP donated to the Linux Foundation in December 2025; the registry now lists more than 10,000 servers).
+
+**What this is not.** A loss leader for paid services. We do not gate the open work behind sales calls, and we do not label it "community edition" of a paid product. Our paid work is engagements; our public work is tools.
+
+**Where to find it.** `[GITHUB ORG URL]` · `[MCP REGISTRY URL]` · `[SKILL REGISTRY URL]`
+
+---
+
+## 3.10 FAQ
+
+*Eight questions sophisticated buyers actually ask.*
 
 ### How do you price?
 Fixed scope plus a written deliverable for most engagements. For longer programs we offer a base retainer with a success fee indexed to KPIs we agree on up front (rollback rate, cost reduction, time to compliance). We do not bill by the hour for senior work.
@@ -252,9 +296,15 @@ First useful artifact in week one (scoping, failure-mode map, eval design). Firs
 ### What is the team?
 Senior engineers and AI researchers only. No layered staffing. The person scoping the engagement is the person on call when it ships. We do not staff engagements with fewer than two senior people.
 
+### Do you train our team, or just build for us?
+Both, on every engagement. Capability transfer is in scope by default. If you want a build with no enablement, we can carve that out, but the default contract assumes we leave; eval ownership, runbook ownership, and incident-response ownership all transfer to your engineers before the engagement closes. The AI Enablement Program is the explicit version of what every engagement does implicitly.
+
+### Why do you publish open-source tools? Is our IP safe in our repo?
+Yes, your IP is safe. Your engagement work product (code, prompts, evals, data) stays in your repo, owned by you. Our public work (MCP servers, skills, plugins, eval starter kits) is separate and never includes client-derived material. We publish because public artifacts sharpen our craft and compound credibility better than case studies. Your contracts state the boundary explicitly.
+
 ---
 
-## 3.10 Final CTA
+## 3.11 Final CTA
 
 **Section headline:** Tell us what broke.
 
@@ -268,9 +318,9 @@ Senior engineers and AI researchers only. No layered staffing. The person scopin
 
 ---
 
-# 4. Five Things Deliberately Not Said
+# 4. Seven Things Deliberately Not Said
 
-*Each omission has a one-line reason.*
+*Each omission has a one-line reason. Originally five; the brief expanded with additional positioning constraints (knowledge company, open-source publisher, neutral on national identity), so the list grew to cover the new boundaries.*
 
 1. **"We use the latest GPT-5 / Claude / Gemini."**
    Naming a frontier model dates the page in three months and signals vendor allegiance to a buyer trying to escape lock-in. Model-agnostic positioning is the differentiator; naming a model contradicts it.
@@ -287,13 +337,22 @@ Senior engineers and AI researchers only. No layered staffing. The person scopin
 5. **A badge wall ("Powered by [framework / partner / certification]").**
    Badge walls signal procurement compliance theater, not engineering depth. Specific certifications (SOC 2, EU AI Act conformity) are stated as facts in the credibility section, with status fields that have to be filled in before launch. Vague "powered by" badges read as resume padding.
 
+6. **National identity in the hero or as primary positioning.**
+   We do not lead with where we are headquartered. Buyers hire on capability first and geography second. Headquarters and home market are operational facts; they belong in compliance scope (data residency, regulatory fluency) and in the footer, not in the pitch. This stance is content-mode neutral: as the firm's market posture evolves, the policy can be revisited; today, the page reads as a global engineering firm.
+
+7. **"We sell AI training programs."**
+   We do not sell training as a standalone product. Capability transfer happens inside engagements, against your real code, your real traffic, your real failure modes. A two-day workshop disconnected from a system in production is theater. The closest we come is the AI Enablement Program, and even that is anchored on a real ride-along, not a curriculum, and its rubric is measured against shipped work.
+
 ---
 
 # Notes for the Designer
 
-- All bracketed strings (`[LOGO 1]`, `[N]`, `[STATUS]`, `[X%]`) are placeholders. Each one has to be filled or removed before launch. Do not ship the page with placeholders visible.
-- Hero is 7 + 19 words. Do not lengthen during design polish; the cap is the cap.
+- The page now has 11 landing sections (3.1 through 3.11). The brief expanded mid-engagement to add two positioning layers: capability-transfer / knowledge-company angle, and open-source publishing. The new sections are 3.4 (AI Enablement Program added inside Services), 3.9 (What We Publish), and the Compliance Readiness service supersedes the EU-only version.
+- All bracketed strings (`[LOGO 1]`, `[N]`, `[STATUS]`, `[X%]`, `[GITHUB ORG URL]`, `[MCP REGISTRY URL]`, etc.) are placeholders. Each has to be filled or removed before launch. Do not ship the page with placeholders visible.
+- Hero is 7 + 23 words. Do not lengthen during design polish; the cap is the cap.
 - The problem section is in the buyer's voice (first-person plural, "we"). This is intentional and should be respected in the visual treatment (different type weight or color from the rest of the page is fine; rewriting to third person is not).
 - No emoji in copy. If the design system uses iconography, icons are line-based and neutral, not branded illustration.
 - Em dashes are not used in this copy. If the designer or copy editor adds them in revision, flag and revert.
 - The 15 banned terms in the vocabulary audit are banned in body copy. They appear in this document only inside the audit and the competitive-landscape analysis, not in the actual landing page sections.
+- The page reads as a global engineering firm. Regional facts appear only where they are operational scope: data residency, PDPL alongside SOC 2 and EU AI Act in the credibility row, multilingual capability where it matters. No flags, no national-identity framing, no home-market name-drops in the hero or above the fold.
+- Section 3.9 (What We Publish) should link out to real GitHub and MCP Registry URLs as soon as they exist. Until then, treat them like the logo grid: placeholders only.
