@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3.1] - 2026-05-04
+
+### Added
+- `site/` — Astro project bootstrap (Astro 6.2.1, TypeScript strict, minimal template, bun as package manager). Lands the scaffolding for the avad.ai landing page implementation against [DESIGN.md](DESIGN.md). The Astro install resolved to 6.x rather than the 5.x specified in [TODOS.md](TODOS.md)'s implementation pathway — `latest` is now 6. Either pin to 5.x in a follow-up if 5.x is required, or update the implementation pathway to acknowledge 6.x is the current major.
+- `site/package.json`, `site/bun.lock`, `site/astro.config.mjs`, `site/tsconfig.json`, `site/src/pages/index.astro` (default minimal template — to be replaced with the design-system hero), `site/public/favicon.{ico,svg}` (default Astro favicons — to be replaced), `site/.gitignore`, `site/README.md` (default Astro readme).
+
+### Process
+- Bootstrap only. No design tokens, no fonts, no MDX, no Cloudflare adapter, no i18n, no hero implementation yet. The handoff prompt for finishing the implementation lives outside the repo (in the user's chat log) and a separate agent run will land that work in a follow-up commit.
+- Bun lockfile committed for reproducibility. `site/node_modules` excluded by the root `.gitignore`.
+
 ## [0.0.3.0] - 2026-05-04
 
 ### Added
