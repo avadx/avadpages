@@ -1,0 +1,182 @@
+---
+import Button from "./Button.astro";
+import type { Strings } from "../i18n/en";
+
+interface Props {
+  t: Strings;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="book" class="finalcta" aria-labelledby="finalcta-h2">
+  <div class="wrap finalcta__inner">
+    <div class="finalcta__copy">
+      <p class="finalcta__tag">{t.finalCta.tag}</p>
+      <h2 id="finalcta-h2" class="finalcta__h2">{t.finalCta.h2}</h2>
+      <p class="finalcta__p">{t.finalCta.p}</p>
+      <div class="finalcta__cta">
+        <Button variant="primary" href="mailto:scoping@avad.ai">
+          {t.finalCta.btn}
+        </Button>
+      </div>
+      <p class="finalcta__micro">{t.finalCta.micro}</p>
+    </div>
+    <aside class="finalcta__card" aria-label={t.finalCta.formCard.title}>
+      <header class="finalcta__card-head">{t.finalCta.formCard.title}</header>
+      <dl class="finalcta__card-body">
+        {t.finalCta.formCard.rows.map((row) => (
+          <div class="finalcta__row">
+            <dt>{row.k}</dt>
+            <dd>{row.v}</dd>
+          </div>
+        ))}
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .finalcta {
+    padding-block: var(--sp-4xl);
+    border-block-start: 0.5px solid var(--rule);
+  }
+
+  .finalcta__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: var(--sp-2xl);
+    align-items: start;
+  }
+
+  .finalcta__copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+    max-width: var(--max-prose);
+  }
+
+  .finalcta__tag {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+  }
+
+  .finalcta__h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(28px, 3.2vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+
+  .finalcta__p {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 560px;
+  }
+
+  .finalcta__cta {
+    margin-block-start: var(--sp-sm);
+  }
+
+  .finalcta__micro {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
+  .finalcta__card {
+    border: 0.5px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .finalcta__card-head {
+    padding: 12px 16px;
+    border-block-end: 0.5px solid var(--rule);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
+  .finalcta__card-body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .finalcta__row {
+    display: grid;
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
+    gap: var(--sp-base);
+    padding: 12px 16px;
+    border-block-end: 0.5px solid var(--rule);
+  }
+
+  .finalcta__row:last-child {
+    border-block-end: 0;
+  }
+
+  .finalcta__row dt {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
+  .finalcta__row dd {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  [lang="ar"] .finalcta__h2,
+  html[dir="rtl"] .finalcta__h2 {
+    font-size: clamp(26px, 3vw, 36px);
+    letter-spacing: 0;
+    line-height: 1.25;
+  }
+
+  [lang="ar"] .finalcta__p,
+  html[dir="rtl"] .finalcta__p {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  [lang="ar"] .finalcta__row dd,
+  html[dir="rtl"] .finalcta__row dd {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 1023px) {
+    .finalcta__inner {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .finalcta {
+      padding-block: var(--sp-2xl);
+    }
+  }
+</style>

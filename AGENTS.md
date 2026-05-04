@@ -16,6 +16,7 @@ Current state: pre-launch. Copy deck is written, HTML implementation has not sta
 - [docs/avad-ai-landing.md](docs/avad-ai-landing.md) — full landing page copy deck (single source of truth for content). Read this first before touching wording.
 - [DESIGN.md](DESIGN.md) — design system source of truth. Read before any visual / UI / CSS work. Overrides default styling behavior; brand still wins on palette and typography.
 - [brand/](brand/) — visual identity. PDF guidelines, logo (SVG), color (SVG/JPG), Arabic + Latin fonts (DIN Next LT Arabic family).
+- [site/](site/) — Astro project. Implementation of the avad.ai landing page against [DESIGN.md](DESIGN.md). Run `bun run dev` from inside `site/`. Vanilla CSS, no UI framework. Fonts copied from [brand/Fonts/](brand/Fonts/) into `site/public/fonts/` (DIN Next LT Arabic is licensed; serve from own origin only, never a public CDN).
 - [CHANGELOG.md](CHANGELOG.md) — every content/structure change goes here. Keep voice neutral and concrete.
 - [TODOS.md](TODOS.md) — launch-blockers, deferred decisions, user challenges from `/autoplan` review. Check before proposing scope.
 - [VERSION](VERSION) — semver-ish (`0.0.X.Y`). Bump on copy or structural changes.
@@ -65,5 +66,12 @@ For commits:
 
 ## Commands
 
-No build, test, or dev server yet (HTML implementation has not started). When that lands, this section gets the actual commands.
+All commands run from inside [site/](site/).
+
+- `bun install` — initial install of Astro and adapters (run once after cloning).
+- `bun run dev` — Astro dev server on http://localhost:4321. Live-reloads on changes to `src/`, `public/`, and `astro.config.mjs`.
+- `bun run build` — static + Cloudflare-adapter build. Output in `site/dist/` (gitignored).
+- `bun run preview` — preview the production build locally.
+
+No tests yet. When CI lands (Vale, Lychee, Playwright, axe-core, Lighthouse), this section gets the gate commands.
 

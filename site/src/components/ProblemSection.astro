@@ -1,0 +1,126 @@
+---
+import SectionHead from "./SectionHead.astro";
+import type { Strings } from "../i18n/en";
+
+interface Props {
+  t: Strings;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="problem" class="problem" aria-labelledby="problem-h2">
+  <div class="wrap">
+    <SectionHead
+      tag={t.problem.tag}
+      h2={t.problem.h2}
+      sub={t.problem.sub}
+      headingId="problem-h2"
+    />
+    <div class="problem__grid">
+      {t.problem.quotes.map((quote) => (
+        <article class="problem__card">
+          <h3 class="problem__h">{quote.h}</h3>
+          <blockquote class="problem__q">{quote.q}</blockquote>
+          <p class="problem__a">{quote.a}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .problem {
+    padding-block: var(--sp-4xl);
+    border-block-start: 0.5px solid var(--rule);
+    background: var(--bg);
+  }
+
+  .problem__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border: 0.5px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .problem__card {
+    padding: var(--sp-lg) var(--sp-lg) var(--sp-md);
+    border-inline-end: 0.5px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+  }
+
+  .problem__card:last-child {
+    border-inline-end: 0;
+  }
+
+  .problem__h {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .problem__q {
+    margin: 0;
+    padding-inline-start: 14px;
+    border-inline-start: 2px solid var(--rule);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .problem__a {
+    margin: 0;
+    margin-block-start: auto;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+
+  [lang="ar"] .problem__h,
+  html[dir="rtl"] .problem__h {
+    font-size: 17px;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+
+  [lang="ar"] .problem__q,
+  html[dir="rtl"] .problem__q {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  html[dir="rtl"] .problem__a {
+    direction: ltr;
+    text-align: start;
+  }
+
+  @media (max-width: 1023px) {
+    .problem__grid {
+      grid-template-columns: 1fr;
+    }
+    .problem__card {
+      border-inline-end: 0;
+      border-block-end: 0.5px solid var(--rule);
+    }
+    .problem__card:last-child {
+      border-block-end: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .problem {
+      padding-block: var(--sp-2xl);
+    }
+  }
+</style>

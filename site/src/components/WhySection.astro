@@ -1,0 +1,167 @@
+---
+import SectionHead from "./SectionHead.astro";
+import type { Strings } from "../i18n/en";
+
+interface Props {
+  t: Strings;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="why" class="why" aria-labelledby="why-h2">
+  <div class="wrap">
+    <SectionHead
+      tag={t.why.tag}
+      h2={t.why.h2}
+      sub={t.why.sub}
+      headingId="why-h2"
+    />
+    <div class="why__grid">
+      {t.why.cards.map((card) => (
+        <article class="why-card">
+          <h3 class="why-card__h">{card.h}</h3>
+          <p class="why-card__p">{card.p}</p>
+          <div class="why-card__rubric">
+            <p class="why-card__rubric-label">{card.rubric.label}</p>
+            <p class="why-card__rubric-lr">
+              <span class="why-card__rubric-v">{card.rubric.v}</span>
+              <span class="why-card__rubric-pct">{card.rubric.pct}%</span>
+            </p>
+            <div
+              class="why-card__bar"
+              role="img"
+              aria-label={`${card.rubric.label}: ${card.rubric.v}`}
+            >
+              <span class="why-card__fill" style={`inline-size: ${card.rubric.pct}%;`}></span>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .why {
+    padding-block: var(--sp-4xl);
+    border-block-start: 0.5px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .why__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border: 0.5px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .why-card {
+    padding: 32px 28px;
+    border-inline-end: 0.5px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .why-card:last-child {
+    border-inline-end: 0;
+  }
+
+  .why-card__h {
+    margin: 0 0 14px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .why-card__p {
+    margin: 0 0 24px;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  .why-card__rubric {
+    margin-block-start: auto;
+    padding-block-start: 16px;
+    border-block-start: 0.5px solid var(--rule);
+  }
+
+  .why-card__rubric-label {
+    margin: 0 0 10px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+
+  .why-card__rubric-lr {
+    margin: 0 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--ink);
+  }
+
+  .why-card__rubric-pct {
+    color: var(--muted);
+  }
+
+  .why-card__bar {
+    block-size: 4px;
+    background: var(--rule);
+  }
+
+  .why-card__fill {
+    display: block;
+    block-size: 100%;
+    background: var(--ink);
+  }
+
+  [lang="ar"] .why-card__h,
+  html[dir="rtl"] .why-card__h {
+    font-size: 19px;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+
+  [lang="ar"] .why-card__p,
+  html[dir="rtl"] .why-card__p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  html[dir="rtl"] .why-card__rubric-label,
+  html[dir="rtl"] .why-card__rubric-lr {
+    direction: ltr;
+    text-align: start;
+  }
+
+  @media (max-width: 1023px) {
+    .why__grid {
+      grid-template-columns: 1fr;
+    }
+    .why-card {
+      border-inline-end: 0;
+      border-block-end: 0.5px solid var(--rule);
+    }
+    .why-card:last-child {
+      border-block-end: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .why {
+      padding-block: var(--sp-2xl);
+    }
+  }
+</style>

@@ -1,0 +1,111 @@
+---
+import type { Strings } from "../i18n/en";
+
+interface Props {
+  t: Strings;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="proofbar" aria-label={t.proof.head}>
+  <div class="wrap">
+    <p class="proofbar__head">{t.proof.head}</p>
+    <div class="proofbar__strip">
+      {t.proof.strip.map((item) => (
+        <div class="proofbar__chip">
+          <span class="proofbar__label">{item.label}</span>
+          <span class="proofbar__val">{item.val}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .proofbar {
+    padding-block: var(--sp-2xl);
+    background: var(--paper);
+    border-block-end: 0.5px solid var(--rule);
+  }
+
+  .proofbar__head {
+    margin: 0 0 var(--sp-md);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+  }
+
+  .proofbar__strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border: 0.5px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .proofbar__chip {
+    padding: 16px 18px;
+    border-inline-end: 0.5px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .proofbar__chip:last-child {
+    border-inline-end: 0;
+  }
+
+  .proofbar__label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+
+  .proofbar__val {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  [lang="ar"] .proofbar__val,
+  html[dir="rtl"] .proofbar__val {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  html[dir="rtl"] .proofbar__head,
+  html[dir="rtl"] .proofbar__label {
+    direction: ltr;
+    text-align: start;
+  }
+
+  @media (max-width: 1023px) {
+    .proofbar__strip {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .proofbar__chip:nth-child(2n) {
+      border-inline-end: 0;
+    }
+    .proofbar__chip:nth-child(-n + 2) {
+      border-block-end: 0.5px solid var(--rule);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .proofbar__strip {
+      grid-template-columns: 1fr;
+    }
+    .proofbar__chip {
+      border-inline-end: 0;
+      border-block-end: 0.5px solid var(--rule);
+    }
+    .proofbar__chip:last-child {
+      border-block-end: 0;
+    }
+  }
+</style>

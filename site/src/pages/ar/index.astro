@@ -1,0 +1,37 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Hero from "../../components/Hero.astro";
+import ProofBar from "../../components/ProofBar.astro";
+import ProblemSection from "../../components/ProblemSection.astro";
+import ServicesSection from "../../components/ServicesSection.astro";
+import ProcessSection from "../../components/ProcessSection.astro";
+import WhySection from "../../components/WhySection.astro";
+import CredibilitySection from "../../components/CredibilitySection.astro";
+import FaqSection from "../../components/FaqSection.astro";
+import FinalCtaSection from "../../components/FinalCtaSection.astro";
+import Footer from "../../components/Footer.astro";
+import { t, lang, dir } from "../../i18n/ar";
+---
+
+<Base
+  lang={lang}
+  dir={dir}
+  title={t.meta.title}
+  description={t.meta.description}
+  skip={t.meta.skip}
+>
+  <Header t={t} homeHref="/ar/" currentLocale="ar" />
+  <main id="main">
+    <Hero t={t} />
+    <ProofBar t={t} />
+    <ProblemSection t={t} />
+    <ServicesSection t={t} />
+    <ProcessSection t={t} />
+    <WhySection t={t} />
+    <CredibilitySection t={t} />
+    <FaqSection t={t} />
+    <FinalCtaSection t={t} />
+  </main>
+  <Footer t={t} currentLocale="ar" />
+</Base>
