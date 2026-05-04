@@ -14,6 +14,7 @@ Current state: pre-launch. Copy deck is written, HTML implementation has not sta
 ## Repo map
 
 - [docs/avad-ai-landing.md](docs/avad-ai-landing.md) — full landing page copy deck (single source of truth for content). Read this first before touching wording.
+- [DESIGN.md](DESIGN.md) — design system source of truth. Read before any visual / UI / CSS work. Overrides default styling behavior; brand still wins on palette and typography.
 - [brand/](brand/) — visual identity. PDF guidelines, logo (SVG), color (SVG/JPG), Arabic + Latin fonts (DIN Next LT Arabic family).
 - [CHANGELOG.md](CHANGELOG.md) — every content/structure change goes here. Keep voice neutral and concrete.
 - [TODOS.md](TODOS.md) — launch-blockers, deferred decisions, user challenges from `/autoplan` review. Check before proposing scope.
@@ -46,6 +47,7 @@ Voice rules (apply to all output you generate, including chat responses about th
 3. **Launch-blockers in `TODOS.md` are real gates.** Do not mark sections "ready" while their blocker is open.
 4. **Brand assets are read-only by default.** Do not regenerate the logo, recolor the palette, or "improve" the PDF. Reference them; do not rewrite them.
 5. **Fonts are licensed assets.** Keep them in [brand/Fonts/](brand/Fonts/). Do not commit them to a public CDN, do not upload them to third-party services.
+6. **Design decisions live in [DESIGN.md](DESIGN.md).** Read it before any visual / UI / CSS work. The anti-patterns section is a hard refusal list — gradients, pill buttons, "Book a demo" CTA, customer logo carousel, hero illustration, decorative orange. If you're unsure whether a change matches the system, ask.
 
 ## Workflow
 
@@ -65,12 +67,3 @@ For commits:
 
 No build, test, or dev server yet (HTML implementation has not started). When that lands, this section gets the actual commands.
 
-## Skills (avad)
-
-This environment has avad skills loaded. Suggested entry points:
-- `/avadbeta-help` — list available skills
-- `/avadbeta-investigate` — root-cause debugging (refuses to guess fixes)
-- `/avadbeta-review` — pre-landing diff review
-- `/autoplan` — multi-phase plan review (already produced the artifact this repo's content is based on)
-
-Skills are user-invoked. Suggest them; do not run high-consequence ones automatically.

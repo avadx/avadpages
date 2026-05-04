@@ -186,3 +186,23 @@ These were auto-decided during review and should be incorporated when implementa
 2. Resolve launch-blockers 1-4 in order of risk
 3. When implementation starts, the auto-decided stack + CI + security gates above become the scaffolding spike (~1 day CC effort)
 4. After implementation begins, run `/plan-eng-review` again on the actual code (this review covered the implementation pathway, not the implementation itself)
+
+---
+
+## Design — added 2026-05-04 by `/design-consultation` (branch `agwax/design-system`)
+
+### Brand asset cleanup (3 cosmetic mismatches — none are blockers)
+
+- [ ] **Logo orange hex.** [brand/Logo.svg](brand/Logo.svg) uses `#F97035` for the dot. The brand spec at [brand/color.svg](brand/color.svg) and [DESIGN.md](DESIGN.md) say `#FC6530`. Update Logo.svg the next time it's regenerated. The two values look identical at a glance but a careful pixel comparison will catch it.
+- [ ] **RGB typo in color spec.** [brand/color.svg](brand/color.svg) labels `#FC6530` as `RGB 48, 101, 252`. That's BGR-reversed; correct is `252, 101, 48`. Cosmetic doc fix in the source Illustrator file.
+- [ ] **Inter typesetting in `color.svg`.** The brand swatch sheet uses Inter to typeset its labels. Inter is not a brand font, it's the Illustrator default. Re-typeset the brand-spec doc in DIN Next LT Arabic to match the system. Low priority.
+
+### Design — content decisions deferred from `/design-consultation`
+
+- [ ] **Pricing visibility.** [DESIGN.md](DESIGN.md) recommends published pricing in EUR and SAR on a public page (one of the deliberate departures from category norms: "engineering firms quote it, consultancies hide it"). This is a content decision, not a system decision. The system is ready for it. Numbers and terms still need to be picked. Decide before launch.
+- [ ] **Eval methodology PDF.** Primary CTA in the design system is `Read the eval methodology [PDF · 14 pp]`. The PDF needs to actually exist and be ~14 pages of real methodology before launch. Cannot ship the hero CTA otherwise.
+- [ ] **Hero eval comparison data.** The hero artifact is a real eval table comparing `avad-agent-vN` against `gpt-4o` / `claude-sonnet-4` / `llama-3.1-70b` on 5-7 named tasks. Numbers need to be measured, not invented. Treat the same as `[TBD-SOURCE]`. Flag if it ships with placeholder values.
+
+### Design — Houston-v1 retrofit (separate branch / future work)
+
+- [ ] **Houston-v1 conformance pass.** `/Users/avad/conductor/workspaces/avadpages/houston-v1/` is a fully-implemented landing page that pre-dates [DESIGN.md](DESIGN.md) and breaks several anti-patterns: hero radial-gradient + grid-bg overlay, 999px pill buttons, 22px border-radius + 60px box-shadow on the artifact card, "Book a 30-minute scoping call" as primary CTA, system-mono fallback chain instead of IBM Plex Mono, decorative orange glows around status dots. When ready, retrofit `assets/styles.css` against the spec — kill gradients, replace pills with hairline-bordered text buttons, swap CTAs, load Plex Mono explicitly, replace the dark terminal hero artifact with the real eval comparison table. Estimated 60-90 minutes of work; lands a v1 you can actually ship. Not done in this `/design-consultation` run by user request.

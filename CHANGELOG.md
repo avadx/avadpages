@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3.0] - 2026-05-04
+
+### Added
+- `DESIGN.md` at the repo root: design system source of truth. Created on the `agwax/design-system` branch by `/design-consultation`. Translates the existing brand identity (logo, palette, DIN Next LT Arabic fonts) into a complete web design system: color tokens, typography roles, 4px-base spacing scale, 12/8/4-column grid, 0.5px hairline component language, minimal-functional motion (only 80-120ms hover transitions and a 600ms hero column fill), first-class RTL via logical CSS properties, dark mode default for `prefers-color-scheme: dark`, AA accessibility tokens, an explicit anti-patterns list (no gradients, no pill buttons, no "Book a demo" CTA, no customer logo carousel, no hero illustration).
+- Hero artifact specification: a real eval comparison table — `avad-agent-vN` vs `gpt-4o` / `claude-sonnet-4` / `llama-3.1-70b` across 5-7 named regulated-task rows, last column filled `#FC6530`, residency tags below, primary CTA `Read the eval methodology [PDF · 14 pp]`, secondary `Talk to engineering`. Replaces the placeholder dark-terminal-mockup hero treatment.
+- `TODOS.md`: design section with 3 brand-asset cosmetic mismatches (logo dot uses `#F97035` vs canonical `#FC6530`, RGB typo in `brand/color.svg`, color spec doc typeset in Inter rather than DIN), 3 content decisions deferred to launch (pricing visibility, eval methodology PDF must exist, hero eval data needs real measurements), and a Houston-v1 retrofit task for a future branch.
+- `AGENTS.md`: new working rule pointing all agents at `DESIGN.md` for visual / UI / CSS work, with the anti-patterns list called out as a hard refusal list.
+- `CLAUDE.md`: pointer to `DESIGN.md` as the design source of truth.
+
+### Changed
+- `AGENTS.md` repo map: added `DESIGN.md` entry between `docs/avad-ai-landing.md` and `brand/`.
+
+### Removed
+- `AGENTS.md`: `## Skills (avad)` section (the entry-point listing for `/avadbeta-help`, `/avadbeta-investigate`, `/avadbeta-review`, `/autoplan`). The same routing now lives in [CLAUDE.md](CLAUDE.md) for Claude Code and is a host concern rather than a per-repo instruction.
+
+### Process
+- `/design-consultation` consulted three voices: primary model, Codex (gpt-5.5, medium reasoning, web search) for design-direction critique, and a separate Claude subagent for an independent direction proposal. Strong convergence on light-on-cream surface, DIN Next LT Arabic for both scripts, IBM Plex Mono pairing, spec-sheet density, and "hero is a real eval table, not a metaphor." Divergences (mono pairing, Latin face split, background hex, body sizing, max widths) resolved in `DESIGN.md`'s Decisions Log.
+- Approved-direction artifact and outside-voice transcripts saved to `~/.avad/projects/avadx-avadpages/designs/design-system-20260504/` (local only, not committed).
+
 ## [0.0.2.0] - 2026-05-04
 
 ### Changed
