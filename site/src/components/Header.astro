@@ -128,9 +128,17 @@ const { t, homeHref, currentLocale } = Astro.props;
     align-items: center;
     gap: var(--sp-lg);
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+  }
+
+  [lang="ar"] .nav-links,
+  html[dir="rtl"] .nav-links {
+    font-family: var(--font-body);
+    font-size: 15px;
+    letter-spacing: 0;
+    text-transform: none;
   }
 
   .nav-links a {
@@ -155,13 +163,13 @@ const { t, homeHref, currentLocale } = Astro.props;
     display: inline-flex;
     align-items: center;
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--ink);
     border: 0.5px solid var(--rule);
     border-radius: 0;
-    padding: 4px 8px;
+    padding: 7px 12px;
     background: transparent;
     text-decoration: none;
     transition: border-color var(--dur-short) var(--ease-out),
@@ -182,9 +190,9 @@ const { t, homeHref, currentLocale } = Astro.props;
     align-items: center;
     justify-content: space-between;
     gap: var(--sp-base);
-    padding-block: 8px;
+    padding-block: 9px;
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--muted);
