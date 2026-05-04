@@ -1,0 +1,76 @@
+# AGENTS.md
+
+Instructions for AI coding agents working on this repo. Applies to Claude Code, Codex, Cursor, Copilot, and any agent that reads `AGENTS.md`.
+
+## What this repo is
+
+`avadpages` is the source for the **avad.ai** landing page and brand surface.
+
+- avad.ai is positioned as a model-agnostic engineering firm serving EU and KSA regulated markets.
+- Output: page copy, design system, HTML/CSS implementation. Not a product codebase.
+
+Current state: pre-launch. Copy deck is written, HTML implementation has not started.
+
+## Repo map
+
+- [docs/avad-ai-landing.md](docs/avad-ai-landing.md) — full landing page copy deck (single source of truth for content). Read this first before touching wording.
+- [brand/](brand/) — visual identity. PDF guidelines, logo (SVG), color (SVG/JPG), Arabic + Latin fonts (DIN Next LT Arabic family).
+- [CHANGELOG.md](CHANGELOG.md) — every content/structure change goes here. Keep voice neutral and concrete.
+- [TODOS.md](TODOS.md) — launch-blockers, deferred decisions, user challenges from `/autoplan` review. Check before proposing scope.
+- [VERSION](VERSION) — semver-ish (`0.0.X.Y`). Bump on copy or structural changes.
+- [README.md](README.md) — currently a stub. Do not expand without being asked.
+
+## Voice and vocabulary — hard constraints
+
+The page has a **vocabulary audit** with 19 banned hype terms. Never use them in copy, commits, or docs:
+
+```
+revolutionize, unlock, harness the power of, cutting-edge, game-changing,
+leverage, empower, seamless, robust, world-class, next-generation, disrupt,
+synergy, transformative, paradigm shift, production-grade, engineered,
+regression-grade, battle-tested
+```
+
+Replacements are documented in [docs/avad-ai-landing.md](docs/avad-ai-landing.md) under "Vocabulary audit". Use them.
+
+Voice rules (apply to all output you generate, including chat responses about this project):
+- No sycophancy, no hedging filler, no AI vocabulary, no em dashes.
+- Short sentences. Concrete over abstract.
+- Disagree when you disagree. Explain reasoning.
+- Match length to the task. A simple question gets a direct answer.
+
+## Working rules
+
+1. **Copy changes are content decisions, not refactors.** If you are about to reword for "clarity" without being asked, stop. Ask first.
+2. **Placeholders are intentional.** `[BRACKETS]`, `[TBD-SOURCE]`, `[QUARTER]` mark unresolved facts. Do not invent values to fill them. Flag in `TODOS.md` if you find a new one.
+3. **Launch-blockers in `TODOS.md` are real gates.** Do not mark sections "ready" while their blocker is open.
+4. **Brand assets are read-only by default.** Do not regenerate the logo, recolor the palette, or "improve" the PDF. Reference them; do not rewrite them.
+5. **Fonts are licensed assets.** Keep them in [brand/Fonts/](brand/Fonts/). Do not commit them to a public CDN, do not upload them to third-party services.
+
+## Workflow
+
+For multi-step work (3+ steps, migrations, bulk rewrites):
+1. Save analysis to disk before deciding.
+2. Track each item (pending / done / skipped) and update as you go.
+3. Log decisions with reasoning. Skipped items get a "revisit when" condition.
+4. Ask before executing a batch.
+
+For commits:
+1. Stage early. After 3–5 substantial edits, run `git add <files>` even if not committing yet.
+2. Before any commit, run `git diff --cached --stat` as a separate command. If a deletion is staged when modification was expected, stop.
+3. No `&&` chaining of `git add` and `git commit`. Run each as a separate Bash call.
+4. Update `CHANGELOG.md` and bump `VERSION` for any user-visible content/structure change.
+
+## Commands
+
+No build, test, or dev server yet (HTML implementation has not started). When that lands, this section gets the actual commands.
+
+## Skills (avad)
+
+This environment has avad skills loaded. Suggested entry points:
+- `/avadbeta-help` — list available skills
+- `/avadbeta-investigate` — root-cause debugging (refuses to guess fixes)
+- `/avadbeta-review` — pre-landing diff review
+- `/autoplan` — multi-phase plan review (already produced the artifact this repo's content is based on)
+
+Skills are user-invoked. Suggest them; do not run high-consequence ones automatically.
