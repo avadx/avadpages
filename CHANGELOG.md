@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.2.0] - 2026-05-04
+
+### Changed
+- Landing page content rewritten in response to /autoplan multi-phase review (CEO + Design + Eng + DX, dual voices: Claude subagent + Codex with web search). Auto-decisions applied; 12 user challenges and 2 taste choices captured in `TODOS.md` as deferred items.
+- "August 2026 problem / deadline" framing replaced with "EU AI Act enforcement windows" across the page so durability extends past August 2026.
+- "AI Enablement Program" service renamed to "Embedded Capability Build" to resolve the contradiction with the "we do not sell training" omission.
+- "Model-Agnostic Architecture" service renamed to "Model-Portable Architecture" with "with measured drift" added to its scope, acknowledging that MCP/A2A reduce integration friction but not behavioral drift.
+- Vocabulary audit expanded from 15 to 19 banned terms — added quality-claim intensifiers caught by review: `production-grade`, `engineered`, `regression-grade`, `battle-tested`. Hero subhead reworded to drop `production-grade`.
+- Aleph Alpha valuation corrected from "$20B post-merger" to sourced figure (Cohere $6.8B per TechCrunch, with pending Aleph Alpha takeover subject to approval).
+- Datadog 88%/41%/9%/47% statistics flagged `[TBD-SOURCE]` with a note: Codex web search did not match these to actual Datadog 2026 published material. Source or replace before launch.
+- Section 3.6 (Proof) gained explicit launch-state copy ("First references shipping `[QUARTER]`") so the section never ships with empty placeholder case studies.
+- Section 3.9 (What We Publish) marked `DEFERRED` with three valid forward paths (build OSS first / move to `/publish` / drop entirely) until the avadx GitHub OSS surface is verified — flagged by all 4 review phases as a launch-blocker.
+- 4 launch-blockers tagged in-line: secondary CTA destination (`/eval-methodology`), SOC 2 status, KSA-region hosting verification, Section 3.9.
+
+### Added
+- `TODOS.md` on the branch, capturing 4 launch-blockers, 12 user challenges (wedge, differentiators, competitor frame, week-12 disclaimer, pricing, naming, mobile + accessibility), and roughly 50 auto-decisions deferred to implementation phase.
+- Mobile design intent section in designer notes (sticky nav, 2x3 logo grid mobile, stacked collapsed services cards, single-accordion FAQ mobile, sticky-bottom CTAs, performance budget).
+- Accessibility intent section (WCAG 2.2 AA, semantic HTML order, keyboard nav, screen-reader semantics, reduced motion, no-JS fallback, axe-core CI gate).
+- Visual discipline section (artifact-led visuals over abstract AI imagery; monospace for technical names; system fonts).
+- Date-stamp footer instruction for credibility section.
+- Implementation pathway section: full Eng-phase auto-decisions documented (Astro 5.x + MDX + Cloudflare Pages + Cal.com + Plausible + Vale + Lighthouse CI + axe-core + Playwright + Lychee + placeholder leakage scan as deploy gate + CSP / HSTS / SRI security headers + AVIF/WebP image optimization).
+- Cross-Reference section pointing at the /autoplan review artifact, restore point, and TODOS.
+
 ## [0.0.1.0] - 2026-05-04
 
 ### Added
