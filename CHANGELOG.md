@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3.1] - 2026-05-04
+
+### Changed
+- Revised Arabic locale wording for closer parity with the English source copy while keeping Western numerals and `%` in Arabic UI strings.
+- Corrected Arabic terminology for prompts, regression tests, rollback, model switching, and compliance scope.
+- Reworded Arabic process labels from phases to steps to match the page copy.
+
 ## [0.0.3.0] - 2026-05-04
 
 ### Added
