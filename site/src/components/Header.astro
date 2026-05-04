@@ -142,17 +142,17 @@ const { t, homeHref, currentLocale } = Astro.props;
   }
 
   .nav-links a {
-    text-decoration: none;
     color: var(--ink);
     padding-block: var(--sp-xs);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    text-decoration-color: transparent;
     transition: text-decoration-color var(--dur-short) var(--ease-out);
   }
 
   .nav-links a:hover,
   .nav-links a:focus-visible {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
     text-decoration-color: var(--ink);
   }
 
@@ -181,8 +181,7 @@ const { t, homeHref, currentLocale } = Astro.props;
       color var(--dur-short) var(--ease-out);
   }
 
-  .lang-toggle:hover,
-  .theme-toggle:hover {
+  .lang-toggle:hover {
     border-color: var(--ink);
   }
 
