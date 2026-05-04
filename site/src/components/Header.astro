@@ -176,13 +176,26 @@ const { t, homeHref, currentLocale } = Astro.props;
     padding: 7px 12px;
     background: transparent;
     text-decoration: none;
-    transition: border-color var(--dur-short) var(--ease-out),
+    transition: background-color var(--dur-short) var(--ease-out),
+      border-color var(--dur-short) var(--ease-out),
       color var(--dur-short) var(--ease-out);
   }
 
   .lang-toggle:hover,
   .theme-toggle:hover {
     border-color: var(--ink);
+  }
+
+  .theme-toggle {
+    color: var(--bg);
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .theme-toggle:hover {
+    color: #ffffff;
+    background: var(--signal);
+    border-color: var(--signal);
   }
 
   .lang-toggle {
