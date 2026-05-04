@@ -4,7 +4,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://avad.ai',
+  site: 'https://avad.app',
   integrations: [mdx()],
   i18n: {
     defaultLocale: 'en',
