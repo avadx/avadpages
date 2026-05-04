@@ -92,6 +92,9 @@ const { t, homeHref, currentLocale } = Astro.props;
       root.setAttribute("data-theme", next);
       localStorage.setItem("theme", next);
       syncLabel();
+      // Drop focus so the orange focus-visible ring does not persist after a
+      // touch tap, which has nowhere else to move focus to.
+      button.blur();
     });
   })();
 </script>
