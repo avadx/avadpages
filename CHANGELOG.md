@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3.0] - 2026-05-04
+
+### Added
+- First HTML implementation of the landing page. Single-file static site at `index.html` with `assets/styles.css` and `assets/i18n.js`. Full bilingual rendering (EN canonical, AR mirror) with `localStorage`-persisted toggle, RTL flip via logical properties, sticky mobile CTA, sticky header, mobile menu, multi-accordion FAQ with expand/collapse-all, services chip-filter, hero artifact card showing a sample eval-suite output, 4-step process band (dark), 3-card differentiator strip with rubric bars, 4-card credibility grid, final-CTA form preview.
+- DIN Next LT Arabic loaded from `brand/Fonts/` (in-repo). Brand mark served from `assets/logo-mark.svg` (light) and `assets/logo-mark-light.svg` (dark, for footer). Both are web-optimized variants of `brand/Logo.svg` with a tightened viewBox; the canonical brand asset is untouched.
+- Section 3.2 (logo bar): rendered as the deck's "artifact strip" empty-state per designer note (no signed-off logos yet).
+- `skip` translation key in both locales so the skip-link localizes in AR.
+
+### Changed
+- Banned em-dash filler removed in two places where the design package introduced it: FAQ #7 ("we can carve that out, but the default contract assumes we leave: ...") and the final-CTA form-card "Format" row. Section heading "Compliance Readiness" now uses parens `(EU AI Act + Saudi PDPL)` to match the deck. Title separator switched from em dash to mid-dot (·) for consistency with on-page separators.
+- Header brand link now uses the logo SVG only (no duplicate `<span>` wordmark). The brand SVG already contains the "avad.ai" wordmark; the prior layout rendered the wordmark twice.
+- Footer logo no longer uses `filter: invert()` (which turned the brand orange into blue). Replaced with a dedicated white-stroked SVG variant that keeps the orange dot.
+
+### Deferred (carried over from 0.0.2.0; not introduced by this revision)
+- Hero secondary CTA still anchors to `#why` instead of `/eval-methodology` — launch-blocker.
+- Cal.com booking embed not wired; CTAs are `mailto:scoping@avad.ai`.
+- Vale linter / em-dash regex / placeholder leakage scan not yet wired into CI.
+- Section 3.9 (What We Publish) intentionally absent until the avadx OSS surface is real.
+
 ## [0.0.2.0] - 2026-05-04
 
 ### Changed
