@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.4.0] - 2026-05-04
+
+### Removed
+- Booking funnel stripped from `index.html`: header "Book a call" button, hero CTA pair, the entire `<section class="final-cta" id="book">` block (with its form-card preview), sticky mobile CTA + `IntersectionObserver`, and the `formCard` JS renderer. The page now closes on FAQ. Matching i18n keys (`nav.book`, `hero.cta1/2`, `finalCta.*`) are preserved in `assets/i18n.js` and `docs/avad-ai-landing.md` so the funnel can be reinstated mechanically, not as a content rewrite. Reason: customer acquisition is not the current goal; the page is positioned as a firm-presence surface.
+
+### Added
+- `index-v2.html` and `assets/styles-v2.css`: parallel comparison version that addresses an engineering review of v1. No gradients, hairline borders instead of pills (`border-radius` capped at 3px), IBM Plex Mono preferred in the mono fallback chain, body fallback narrowed to `"DIN Next LT", system-ui, sans-serif` (Roboto, Arial, Helvetica Neue, Segoe UI dropped), neutral `::selection`, real bordered CSS-Grid eval table replacing the dark terminal mockup, restrained orange budget (4 reserved sites instead of 8+), single paper surface. v2 ships alongside v1 for side-by-side review at `/index.html` vs `/index-v2.html`. Original `index.html` and `assets/styles.css` are untouched apart from the CTA removal above.
+
+### Deferred
+- CSS dead code in `assets/styles.css` (rules for `.sticky-cta`, `.final-cta`, `.hero-cta` and descendants) and `assets/styles-v2.css` (same set) left in place. Cleanup waits on the v1-vs-v2 decision; whichever variant is dropped takes its dead rules with it.
+- i18n keys orphaned by the funnel removal (`nav.book`, `hero.cta1`, `hero.cta2`, `finalCta.*`) intentionally retained in both EN and AR locales for symmetric reinstatement.
+
 ## [0.0.3.2] - 2026-05-04
 
 ### Fixed
