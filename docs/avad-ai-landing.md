@@ -12,7 +12,6 @@
 - Datadog statistics flagged as `[TBD-SOURCE]` until original Datadog 2026 reporting is confirmed (Codex web search did not match these numbers to actual Datadog material).
 - Section 3.6 proof section gained explicit launch-state copy (no fake case studies).
 - Section 3.9 (What We Publish) marked DEFERRED until avadx GitHub OSS surface is verified.
-- Date-stamp footer added to Section 3.8 (Tech Credibility).
 - Mobile + accessibility design intent added to designer notes.
 - 12 user challenges (wedge, differentiators, competitor frame, week-12 disclaimer, pricing, naming) deferred to TODOS.md per user's "approve as-is" decision.
 
@@ -279,7 +278,7 @@ Non-English performance is a first-class evaluation lane on every applicable eng
 Every system we ship is evaluated at three levels: final-output, intermediate-step, and full-trajectory. The test framework is documented in the repo. Suite is wired into your CI before handover. Coverage targets are agreed up front and reported weekly during build. The current site links the hero CTA to this methodology summary until a standalone methodology page exists.
 
 ### Security and compliance
-- SOC 2 Type II: `[STATUS, with attestation date]` `<!-- LAUNCH-BLOCKER: if Type II is not started, descope this line entirely or label "in progress, target [DATE]." Implying SOC 2 is imminent when it isn't kills credibility on the first RFP. -->`
+- SOC 2 Type II: `[STATUS]` `<!-- LAUNCH-BLOCKER: if Type II is not started, descope this line entirely or label the actual status. Implying SOC 2 is imminent when it isn't kills credibility on the first RFP. -->`
 - Data residency: Saudi Arabia (KSA region), EU, US, or self-hosted at your election. PDPL-aware by default for in-Kingdom workloads; SDAIA cross-border transfer conditions documented per engagement. `<!-- LAUNCH-BLOCKER: verify KSA-region hosting capability is real (not aspirational) before this section ships. -->`
 - Saudi PDPL: classification of personal-data processing activities, lawful-basis documentation, sensitive-data localization where required, data-protection impact assessments for high-risk processing.
 - EU AI Act: Annex III classification on in-scope systems, conformity documentation, post-market monitoring plan, Article 4 AI-literacy curriculum for client staff.
@@ -427,7 +426,7 @@ The copy bans hype words. The visual must ban the AI-consulting look. Specifical
 
 ## Date stamps (added by /autoplan Phase 2)
 
-Footer or end-of-credibility-section line: `Facts and figures last verified: [DATE]`. The page should be reviewed quarterly; a calendar reminder owns this.
+Review time-bound claims quarterly. Keep the review owner outside the page copy.
 
 ---
 
@@ -451,6 +450,6 @@ The plan was content-only. Eng review surfaced these auto-decisions for when HTM
 # Cross-Reference
 
 - **Prior revision of this plan**: preserved in git history (commit 53028b2 and earlier on branch agwax/avadai-landing).
-- **/autoplan review artifact**: `~/.avad/projects/avadx-avadpages/agwax-avadai-landing-autoplan-review-20260504-050715.md` (695 lines; full review, all dual-voice outputs, scorecards, ASCII diagrams, journey maps).
-- **Restore point**: `~/.avad/projects/avadx-avadpages/agwax-avadai-landing-autoplan-restore-20260504-045251.md`.
+- **/autoplan review artifact**: local review artifact retained outside the repo.
+- **Restore point**: local restore artifact retained outside the repo.
 - **TODOs**: `TODOS.md` (12 user challenges + auto-decisions deferred to implementation + 2 taste decisions).

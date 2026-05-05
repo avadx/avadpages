@@ -125,7 +125,6 @@ These were auto-decided during review and should be incorporated when implementa
 - [ ] Pre-launch fact-check: source-link every numeric claim
 - [ ] "August 2026 problem" → "AI Act enforcement windows" framing replacement
 - [ ] AI Enablement Program → "Embedded Capability Build" rename
-- [ ] Date-stamp time-bound facts ("facts as of <date>" footer in credibility section)
 - [ ] Quarterly fact-refresh process (calendar reminder + owner)
 - [ ] Section 3.4 / 3.7 DRY pass (services already imply differentiators)
 - [ ] Cap page at 9 sections (merge 3.4 + 3.7, move 3.9 to /publish)
@@ -140,7 +139,7 @@ These were auto-decided during review and should be incorporated when implementa
 - [ ] Block launch if not ready (or change secondary CTA to something that exists)
 
 ### Verify before 3.8 ships
-- [ ] SOC 2 Type II actual status (descope or label "in progress, target [DATE]" if not started)
+- [ ] SOC 2 Type II actual status (descope or label the actual status if not started)
 - [ ] KSA-region hosting actual capability (descope or admit aspirational if not real)
 
 ### DX implementation checklist (gates section 3.9)

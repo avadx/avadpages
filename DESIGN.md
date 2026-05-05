@@ -397,7 +397,7 @@ body {
 
 Font loading: `@font-face` for the 5 DIN Next LT Arabic weights from [brand/Fonts/](brand/Fonts/) (do **not** put on a public CDN per [AGENTS.md](AGENTS.md)). IBM Plex Mono via Google Fonts CSS2 endpoint or self-hosted from a packaged subset.
 
-Reference preview: `/tmp/avad-design-preview-qS3Sue/index.html` on the originating machine (transient — captured in `~/.avad/projects/avadx-avadpages/designs/design-system-20260504/` for the approved-direction record).
+Reference preview: `/tmp/avad-design-preview-qS3Sue/index.html` on the originating machine (transient — captured in the local approved-direction record).
 
 ---
 

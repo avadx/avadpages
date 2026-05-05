@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3.9] - 2026-05-05
+
+### Changed
+- `site/src/` — removed the dated run and verification text from the public page, removed the MCP servers / skills / plugins FAQ entry from both locales, and kept the eval methodology CTA target intact.
+- `docs/avad-ai-landing.md`, `DESIGN.md`, and `TODOS.md` — removed references to the old content date and aligned FAQ count with the public page.
+- `site/wrangler.jsonc` — updated Cloudflare compatibility date to the current deployment date.
+- `VERSION` and `site/package.json` bumped to `0.0.3.9`.
+
 ## [0.0.3.8] - 2026-05-05
 
 ### Changed
@@ -40,14 +48,14 @@ All notable changes to this project will be documented in this file.
 - `site/src/components/ServicesSection.astro` — increased services metadata label readability in the expanded service panels: `IDEAL BUYER` / `ENGAGEMENT SHAPE` now use 12px mono, weight 500, and tighter 0.04em tracking.
 - `VERSION` and `site/package.json` bumped to `0.0.3.3`.
 
-## [0.0.3.2] - 2026-05-04
+## [0.0.3.2]
 
 ### Added
 - `site/src/` — first working pages for `/` (LTR English) and `/ar/` (RTL Arabic), rendered against [DESIGN.md](DESIGN.md). Hero stack: section ID label, h1 with `evals` accent in `--signal`, subhead, eval comparison table (5 columns × 6 task rows, last column filled `--signal` with white text + delta in mono 10px at 78% white), three residency tags (KSA, EU, audit-trail), primary + secondary CTAs (`Read the eval methodology` / `Talk to engineering`).
 - `site/src/styles/design-system.css` — token implementation of DESIGN.md: color, spacing, layout, motion, type. Light surface `#F2F2F2` / ink `#000` default; dark mode `#0E0E0D` / `#F2F2F2` triggered by `prefers-color-scheme: dark` (and `data-theme="dark"` for the manual toggle). Logical CSS properties throughout for RTL parity. Skip link, focus-visible ring, reduced-motion media query.
 - `site/src/styles/fonts.css` — `@font-face` for five DIN Next LT Arabic weights (200, 400, 500, 700, 800; 900 skipped per DESIGN.md) loaded from `/fonts/`. IBM Plex Mono 400 / 500 imported from Google Fonts CSS2.
 - `site/public/fonts/` — six DIN Next LT Arabic .ttf files copied from [brand/Fonts/](brand/Fonts/). Self-hosted, never on a public CDN.
-- `site/src/components/` — `Logo.astro` (inline SVG of the brand wordmark, `viewBox` tightened to letter content, orange dot recolored from `#F97035` to canonical `#FC6530`), `Header.astro` (sticky header with nav row + meta strip showing `EVAL_RUN · 2026-05-04 · 04:12 UTC` and `LIVE · 6 tasks · 4 models` with `--pass` dot, plus an inline-script Light/Dark theme toggle), `Hero.astro`, `EvalTable.astro`, `ResidencyTag.astro` (tone variants `signal` / `pass`), `Button.astro` (variants `primary` / `secondary` / `quiet`, optional trailing mono meta divided by hairline, border-radius 0), `Footer.astro` (lang switcher lives here as plain text links per DESIGN.md anti-patterns).
+- `site/src/components/` — `Logo.astro` (inline SVG of the brand wordmark, `viewBox` tightened to letter content, orange dot recolored from `#F97035` to canonical `#FC6530`), `Header.astro` (sticky header with nav row + meta strip showing `EVAL_RUN` and `LIVE · 6 tasks · 4 models` with `--pass` dot, plus an inline-script Light/Dark theme toggle), `Hero.astro`, `EvalTable.astro`, `ResidencyTag.astro` (tone variants `signal` / `pass`), `Button.astro` (variants `primary` / `secondary` / `quiet`, optional trailing mono meta divided by hairline, border-radius 0), `Footer.astro` (lang switcher lives here as plain text links per DESIGN.md anti-patterns).
 - `site/src/i18n/en.ts` and `site/src/i18n/ar.ts` — locale dictionaries. Mono / identifier strings (eval IDs, model names, region tags, `EVAL_RUN`, `LIVE`, residency labels, `PDF · 14 pp`) stay Latin in both locales by design; numerals stay Western Arabic for tabular alignment.
 - `site/src/layouts/Base.astro` — html/head/body shell, sets `lang` and `dir`, wires the skip link.
 - `site/src/pages/ar/index.astro` — Arabic locale entry (`/ar/`).
@@ -67,7 +75,7 @@ All notable changes to this project will be documented in this file.
 - **Astro adapter:** Cloudflare. The build emits `dist/` with `_worker.js` for Cloudflare Pages. Hosted target is unchanged from [TODOS.md](TODOS.md).
 - **No customer logos, no hero illustration, no gradients, no pill buttons, no `Book a ...` CTAs.** Confirmed by `grep -rn "linear-gradient\|radial-gradient\|conic-gradient" site/src/`, `grep -rn "border-radius: 999" site/src/`, `grep -rn "Book a demo\|Book a call\|Book a 30" site/src/ site/public/`, `grep -irnE "Inter|Roboto|system-ui" site/src/styles/` — all empty.
 
-## [0.0.3.1] - 2026-05-04
+## [0.0.3.1]
 
 ### Added
 - `site/` — Astro project bootstrap (Astro 6.2.1, TypeScript strict, minimal template, bun as package manager). Lands the scaffolding for the avad.ai landing page implementation against [DESIGN.md](DESIGN.md). The Astro install resolved to 6.x rather than the 5.x specified in [TODOS.md](TODOS.md)'s implementation pathway — `latest` is now 6. Either pin to 5.x in a follow-up if 5.x is required, or update the implementation pathway to acknowledge 6.x is the current major.
@@ -77,7 +85,7 @@ All notable changes to this project will be documented in this file.
 - Bootstrap only. No design tokens, no fonts, no MDX, no Cloudflare adapter, no i18n, no hero implementation yet. The handoff prompt for finishing the implementation lives outside the repo (in the user's chat log) and a separate agent run will land that work in a follow-up commit.
 - Bun lockfile committed for reproducibility. `site/node_modules` excluded by the root `.gitignore`.
 
-## [0.0.3.0] - 2026-05-04
+## [0.0.3.0]
 
 ### Added
 - `DESIGN.md` at the repo root: design system source of truth. Created on the `agwax/design-system` branch by `/design-consultation`. Translates the existing brand identity (logo, palette, DIN Next LT Arabic fonts) into a complete web design system: color tokens, typography roles, 4px-base spacing scale, 12/8/4-column grid, 0.5px hairline component language, minimal-functional motion (only 80-120ms hover transitions and a 600ms hero column fill), first-class RTL via logical CSS properties, dark mode default for `prefers-color-scheme: dark`, AA accessibility tokens, an explicit anti-patterns list (no gradients, no pill buttons, no "Book a demo" CTA, no customer logo carousel, no hero illustration).
@@ -94,9 +102,9 @@ All notable changes to this project will be documented in this file.
 
 ### Process
 - `/design-consultation` consulted three voices: primary model, Codex (gpt-5.5, medium reasoning, web search) for design-direction critique, and a separate Claude subagent for an independent direction proposal. Strong convergence on light-on-cream surface, DIN Next LT Arabic for both scripts, IBM Plex Mono pairing, spec-sheet density, and "hero is a real eval table, not a metaphor." Divergences (mono pairing, Latin face split, background hex, body sizing, max widths) resolved in `DESIGN.md`'s Decisions Log.
-- Approved-direction artifact and outside-voice transcripts saved to `~/.avad/projects/avadx-avadpages/designs/design-system-20260504/` (local only, not committed).
+- Approved-direction artifact and outside-voice transcripts saved outside the repo (local only, not committed).
 
-## [0.0.2.0] - 2026-05-04
+## [0.0.2.0]
 
 ### Changed
 - Landing page content rewritten in response to /autoplan multi-phase review (CEO + Design + Eng + DX, dual voices: Claude subagent + Codex with web search). Auto-decisions applied; 12 user challenges and 2 taste choices captured in `TODOS.md` as deferred items.
@@ -115,11 +123,10 @@ All notable changes to this project will be documented in this file.
 - Mobile design intent section in designer notes (sticky nav, 2x3 logo grid mobile, stacked collapsed services cards, single-accordion FAQ mobile, sticky-bottom CTAs, performance budget).
 - Accessibility intent section (WCAG 2.2 AA, semantic HTML order, keyboard nav, screen-reader semantics, reduced motion, no-JS fallback, axe-core CI gate).
 - Visual discipline section (artifact-led visuals over abstract AI imagery; monospace for technical names; system fonts).
-- Date-stamp footer instruction for credibility section.
 - Implementation pathway section: full Eng-phase auto-decisions documented (Astro 5.x + MDX + Cloudflare Pages + Cal.com + Plausible + Vale + Lighthouse CI + axe-core + Playwright + Lychee + placeholder leakage scan as deploy gate + CSP / HSTS / SRI security headers + AVIF/WebP image optimization).
 - Cross-Reference section pointing at the /autoplan review artifact, restore point, and TODOS.
 
-## [0.0.1.0] - 2026-05-04
+## [0.0.1.0]
 
 ### Added
 - avad.ai landing page content package (`avad-ai-landing.md`): full 358-line copy deck including research brief, competitive landscape analysis, primary positioning, three differentiators, six service offerings, proof templates, technical credibility section, open-source publishing section, FAQ, and designer notes.
