@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3.4] - 2026-05-05
+
+### Changed
+- `site/src/components/ProofBar.astro` — fixed Arabic proof-strip typography by removing forced LTR direction and mono tracking from Arabic labels, then raising Arabic label/value sizes for mobile readability.
+- `VERSION` and `site/package.json` bumped to `0.0.3.4`.
+
 ## [0.0.3.3] - 2026-05-05
 
 ### Changed

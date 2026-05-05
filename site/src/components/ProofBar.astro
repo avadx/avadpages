@@ -74,14 +74,33 @@ const { t } = Astro.props;
 
   [lang="ar"] .proofbar__val,
   html[dir="rtl"] .proofbar__val {
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.6;
   }
 
+  [lang="ar"] .proofbar__head,
   html[dir="rtl"] .proofbar__head,
+  [lang="ar"] .proofbar__label,
   html[dir="rtl"] .proofbar__label {
-    direction: ltr;
+    font-family: var(--font-body);
+    text-transform: none;
+    letter-spacing: 0;
+    direction: rtl;
     text-align: start;
+  }
+
+  [lang="ar"] .proofbar__head,
+  html[dir="rtl"] .proofbar__head {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  [lang="ar"] .proofbar__label,
+  html[dir="rtl"] .proofbar__label {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.5;
   }
 
   @media (max-width: 1023px) {
