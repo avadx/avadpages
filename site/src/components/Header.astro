@@ -64,7 +64,7 @@ const { t, homeHref, currentLocale } = Astro.props;
 <script is:inline>
   (function () {
     const root = document.documentElement;
-    const stored = localStorage.getItem("theme");
+    const stored = sessionStorage.getItem("theme");
     if (stored === "light" || stored === "dark") {
       root.setAttribute("data-theme", stored);
     }
@@ -90,7 +90,7 @@ const { t, homeHref, currentLocale } = Astro.props;
     button.addEventListener("click", function () {
       const next = currentTheme() === "dark" ? "light" : "dark";
       root.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
+      sessionStorage.setItem("theme", next);
       syncLabel();
       // Drop focus only when the activation was not keyboard. Touch and
       // mouse leave a sticky focus ring with nothing to move it onto;
