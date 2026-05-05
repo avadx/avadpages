@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3.7] - 2026-05-05
+
+### Changed
+- `site/src/components/ServicesSection.astro` — fixed Arabic service metadata typography for items such as `تدقيق` and `استراتيجية` by removing forced LTR direction, mono styling, uppercase transforms, and letter tracking from Arabic service labels.
+- `VERSION` and `site/package.json` bumped to `0.0.3.7`.
+
 ## [0.0.3.6] - 2026-05-05
 
 ### Changed

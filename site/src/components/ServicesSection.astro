@@ -124,6 +124,8 @@ const labels = t.services.labels;
   html[dir="rtl"] .svc__promise {
     font-size: 16px;
     line-height: 1.7;
+    direction: rtl;
+    text-align: start;
   }
 
   .svc__toggle {
@@ -244,12 +246,37 @@ const labels = t.services.labels;
     line-height: 1.7;
   }
 
+  [lang="ar"] .svc__num,
   html[dir="rtl"] .svc__num,
-  html[dir="rtl"] .svc__promise,
+  [lang="ar"] .svc__k,
+  html[dir="rtl"] .svc__k,
+  [lang="ar"] .svc__meta-k,
   html[dir="rtl"] .svc__meta-k,
+  [lang="ar"] .svc__meta-tag,
   html[dir="rtl"] .svc__meta-tag {
-    direction: ltr;
+    font-family: var(--font-body);
+    text-transform: none;
+    letter-spacing: 0;
+    direction: rtl;
     text-align: start;
+  }
+
+  [lang="ar"] .svc__num,
+  html[dir="rtl"] .svc__num {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  [lang="ar"] .svc__k,
+  html[dir="rtl"] .svc__k,
+  [lang="ar"] .svc__meta-k,
+  html[dir="rtl"] .svc__meta-k,
+  [lang="ar"] .svc__meta-tag,
+  html[dir="rtl"] .svc__meta-tag {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   @media (max-width: 1023px) {
