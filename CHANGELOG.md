@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3.7] - 2026-05-05
+
+### Changed
+- `site/src/components/ServicesSection.astro` — fixed Arabic service metadata typography for items such as `تدقيق` and `استراتيجية` by removing forced LTR direction, mono styling, uppercase transforms, and letter tracking from Arabic service labels.
+- `VERSION` and `site/package.json` bumped to `0.0.3.7`.
+
+## [0.0.3.6] - 2026-05-05
+
+### Changed
+- `site/src/components/CredibilitySection.astro` — changed the model-provider footnote from small mono metadata styling to readable body text, with larger Arabic sizing and line height.
+- `VERSION` and `site/package.json` bumped to `0.0.3.6`.
+
+## [0.0.3.5] - 2026-05-05
+
+### Changed
+- `site/src/components/SectionHead.astro`, `WhySection.astro`, `CredibilitySection.astro`, `FinalCtaSection.astro`, and `Footer.astro` — fixed Arabic metadata typography from "لماذا avad.ai" onward by removing forced LTR direction, mono styling, uppercase transforms, and letter tracking from Arabic labels and footer metadata.
+- `VERSION` and `site/package.json` bumped to `0.0.3.5`.
+
+## [0.0.3.4] - 2026-05-05
+
+### Changed
+- `site/src/components/ProofBar.astro` — fixed Arabic proof-strip typography by removing forced LTR direction and mono tracking from Arabic labels, then raising Arabic label/value sizes for mobile readability.
+- `VERSION` and `site/package.json` bumped to `0.0.3.4`.
+
+## [0.0.3.3] - 2026-05-05
+
+### Changed
+- `site/src/components/ServicesSection.astro` — increased services metadata label readability in the expanded service panels: `IDEAL BUYER` / `ENGAGEMENT SHAPE` now use 12px mono, weight 500, and tighter 0.04em tracking.
+- `VERSION` and `site/package.json` bumped to `0.0.3.3`.
+
 ## [0.0.3.2] - 2026-05-04
 
 ### Added

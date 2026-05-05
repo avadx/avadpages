@@ -92,6 +92,13 @@ const { t, homeHref, currentLocale } = Astro.props;
       root.setAttribute("data-theme", next);
       localStorage.setItem("theme", next);
       syncLabel();
+      // Drop focus only when the activation was not keyboard. Touch and
+      // mouse leave a sticky focus ring with nothing to move it onto;
+      // keyboard activation must keep focus so the user does not lose their
+      // place in the tab order.
+      if (!button.matches(":focus-visible")) {
+        button.blur();
+      }
     });
   })();
 </script>
@@ -142,14 +149,18 @@ const { t, homeHref, currentLocale } = Astro.props;
   }
 
   .nav-links a {
-    text-decoration: none;
     color: var(--ink);
     padding-block: var(--sp-xs);
-    transition: color var(--dur-short) var(--ease-out);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    text-decoration-color: transparent;
+    transition: text-decoration-color var(--dur-short) var(--ease-out);
   }
 
-  .nav-links a:hover {
-    color: var(--muted);
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    text-decoration-color: var(--ink);
   }
 
   .nav-actions {
@@ -172,12 +183,18 @@ const { t, homeHref, currentLocale } = Astro.props;
     padding: 7px 12px;
     background: transparent;
     text-decoration: none;
-    transition: border-color var(--dur-short) var(--ease-out),
+    transition: background-color var(--dur-short) var(--ease-out),
+      border-color var(--dur-short) var(--ease-out),
       color var(--dur-short) var(--ease-out);
   }
 
-  .lang-toggle:hover,
-  .theme-toggle:hover {
+  .lang-toggle:hover {
+    border-color: var(--ink);
+  }
+
+  .theme-toggle {
+    color: var(--bg);
+    background: var(--ink);
     border-color: var(--ink);
   }
 

@@ -186,8 +186,14 @@ const { t, currentLocale } = Astro.props;
     line-height: 1.7;
   }
 
+  [lang="ar"] .site-footer__bot,
   html[dir="rtl"] .site-footer__bot {
-    direction: ltr;
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.6;
+    text-transform: none;
+    letter-spacing: 0;
+    direction: rtl;
     text-align: start;
   }
 

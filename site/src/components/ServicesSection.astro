@@ -124,6 +124,8 @@ const labels = t.services.labels;
   html[dir="rtl"] .svc__promise {
     font-size: 16px;
     line-height: 1.7;
+    direction: rtl;
+    text-align: start;
   }
 
   .svc__toggle {
@@ -138,13 +140,15 @@ const labels = t.services.labels;
     border: 0.5px solid var(--rule);
     transition:
       color var(--dur-short) var(--ease-out),
+      background-color var(--dur-short) var(--ease-out),
       border-color var(--dur-short) var(--ease-out),
       transform var(--dur-short) var(--ease-out);
   }
 
   .svc[open] .svc__toggle {
-    color: var(--ink);
-    border-color: var(--ink);
+    color: #ffffff;
+    background: var(--signal);
+    border-color: var(--signal);
     transform: rotate(45deg);
   }
 
@@ -197,9 +201,10 @@ const labels = t.services.labels;
 
   .svc__meta-k {
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-weight: 500;
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.04em;
     color: var(--muted);
     padding-block-start: 2px;
   }
@@ -241,12 +246,37 @@ const labels = t.services.labels;
     line-height: 1.7;
   }
 
+  [lang="ar"] .svc__num,
   html[dir="rtl"] .svc__num,
-  html[dir="rtl"] .svc__promise,
+  [lang="ar"] .svc__k,
+  html[dir="rtl"] .svc__k,
+  [lang="ar"] .svc__meta-k,
   html[dir="rtl"] .svc__meta-k,
+  [lang="ar"] .svc__meta-tag,
   html[dir="rtl"] .svc__meta-tag {
-    direction: ltr;
+    font-family: var(--font-body);
+    text-transform: none;
+    letter-spacing: 0;
+    direction: rtl;
     text-align: start;
+  }
+
+  [lang="ar"] .svc__num,
+  html[dir="rtl"] .svc__num {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  [lang="ar"] .svc__k,
+  html[dir="rtl"] .svc__k,
+  [lang="ar"] .svc__meta-k,
+  html[dir="rtl"] .svc__meta-k,
+  [lang="ar"] .svc__meta-tag,
+  html[dir="rtl"] .svc__meta-tag {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   @media (max-width: 1023px) {

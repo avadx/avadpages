@@ -105,7 +105,9 @@ const { t } = Astro.props;
   [lang="ar"] .why-card__rubric-label,
   html[dir="rtl"] .why-card__rubric-label {
     font-family: var(--font-body);
-    font-size: 13px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.5;
     letter-spacing: 0;
     text-transform: none;
   }
@@ -148,9 +150,11 @@ const { t } = Astro.props;
     line-height: 1.7;
   }
 
-  html[dir="rtl"] .why-card__rubric-label,
+  [lang="ar"] .why-card__rubric-lr,
   html[dir="rtl"] .why-card__rubric-lr {
-    direction: ltr;
+    font-family: var(--font-body);
+    font-size: 15px;
+    direction: rtl;
     text-align: start;
   }
 
