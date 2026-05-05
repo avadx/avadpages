@@ -136,11 +136,10 @@ const { t } = Astro.props;
     margin: 18px 0 0;
     padding-block-start: 14px;
     border-block-start: 0.5px solid var(--rule);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink);
   }
 
   .cred__stamp {
@@ -160,8 +159,6 @@ const { t } = Astro.props;
 
   [lang="ar"] .cred-card__h,
   html[dir="rtl"] .cred-card__h,
-  [lang="ar"] .cred-card__foot,
-  html[dir="rtl"] .cred-card__foot,
   [lang="ar"] .cred__stamp,
   html[dir="rtl"] .cred__stamp {
     font-family: var(--font-body);
@@ -179,7 +176,13 @@ const { t } = Astro.props;
   }
 
   [lang="ar"] .cred-card__foot,
-  html[dir="rtl"] .cred-card__foot,
+  html[dir="rtl"] .cred-card__foot {
+    font-size: 16px;
+    line-height: 1.7;
+    direction: rtl;
+    text-align: start;
+  }
+
   [lang="ar"] .cred__stamp,
   html[dir="rtl"] .cred__stamp {
     font-size: 13px;

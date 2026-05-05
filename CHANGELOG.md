@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3.6] - 2026-05-05
+
+### Changed
+- `site/src/components/CredibilitySection.astro` — changed the model-provider footnote from small mono metadata styling to readable body text, with larger Arabic sizing and line height.
+- `VERSION` and `site/package.json` bumped to `0.0.3.6`.
+
 ## [0.0.3.5] - 2026-05-05
 
 ### Changed
