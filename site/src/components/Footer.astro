@@ -38,7 +38,7 @@ const { t, currentLocale } = Astro.props;
   </div>
   <div class="wrap site-footer__bot">
     <span>{t.footer.legal}</span>
-    <span>{t.footer.stamp}</span>
+    {t.footer.stamp && <span>{t.footer.stamp}</span>}
   </div>
 </footer>
 

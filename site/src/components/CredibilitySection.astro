@@ -18,8 +18,8 @@ const { t } = Astro.props;
       headingId="cred-h2"
     />
     <div class="cred__grid">
-      {t.cred.cards.map((card) => (
-        <article class="cred-card">
+      {t.cred.cards.map((card, idx) => (
+        <article id={idx === 1 ? "eval-methodology" : undefined} class="cred-card">
           <h3 class="cred-card__h">{card.h}</h3>
           {card.type === "pills" ? (
             <div class="cred-card__pills">
@@ -41,7 +41,7 @@ const { t } = Astro.props;
         </article>
       ))}
     </div>
-    <p class="cred__stamp">{t.cred.stamp}</p>
+    {t.cred.stamp && <p class="cred__stamp">{t.cred.stamp}</p>}
   </div>
 </section>
 
