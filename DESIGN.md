@@ -1,7 +1,7 @@
 # DESIGN.md — avad.ai design system
 
 Single source of truth for the avad.ai landing page visual system.
-Created 2026-05-04 by `/design-consultation`.
+Created by `/design-consultation`.
 
 This document overrides any other styling reference except the brand identity in
 [brand/](brand/). Where brand assets and this file disagree, brand wins for
@@ -17,7 +17,7 @@ deviations explicitly.
 
 - **What this is:** avad.ai marketing landing page. Pre-launch.
 - **Who it's for:** Heads of AI / VP Engineering / CTO at growth-stage companies (200-2,000) in regulated or regulated-adjacent sectors (fintech, healthtech, B2B SaaS, infrastructure, govtech), with EU or KSA market exposure. Secondary reader: their auditor.
-- **Wedge:** AI agents that hold up to your evals, your data, your auditors.
+- **Wedge:** AI agents that hold up in production.
 - **Memorable thing (drives every visual call):** *Serious software for serious work.* Refined, dense, low-decoration, type does the work, no marketing patterns. Reads as engineering firm, not consultancy.
 - **Litmus test:** if a senior ML engineer screenshots the hero and posts it without commentary, the design is working. If they need to caption it, it failed.
 
@@ -276,13 +276,13 @@ Above each section heading: `3.1 · HERO`, `SY · 02 · TYPOGRAPHY`, etc. 11px m
 
 Stack:
 
-1. **Headline** (DIN Heavy 800, 60-64px, max-width 760px, line-height 1.05): "Agents that hold up to your **evals**, your data, your auditors." Word "evals" in `--signal`.
-2. **Subhead** (DIN Regular 400, 18px, `--muted`, max-width 680px): one line. e.g., "Model-agnostic. EU + KSA fluent. The eval ships with the agent."
+1. **Headline** (DIN Heavy 800, 60-64px, max-width 760px, line-height 1.05): "AI agents that **hold up** in production." Words "hold up" in `--signal`.
+2. **Subhead** (DIN Regular 400, 18px, `--muted`, max-width 680px): "avad.ai builds AI agents you can put in production, builds the teams that run them, and publishes the open tools the field depends on. Model-agnostic by contract."
 3. **Eval comparison table** (max-width 1080px) with 5-7 task rows the buyer recognizes: PII redaction (Arabic medical notes), SAMA disclosure classifier, EU AI Act Annex III risk tag, cross-border data residency check, trajectory faithfulness (5-step), refusal accuracy (regulated prompts). Columns: foundation models the reader knows + `avad-agent-vN`. Cells = pass-rate %. Last column filled `--signal`.
 4. **Residency tags row:** `KSA-Riyadh · pdpl-compliant`, `EU-Frankfurt · ai-act-ready`, `audit-trail · 90-day retention`.
 5. **CTA pair:**
-   - Primary (filled `--ink`): `Read the eval methodology` + mono divider + `PDF · 14 pp`
-   - Secondary (outlined `--ink`): `Talk to engineering` (NOT "sales", NOT "Book a demo", NOT "Book a call")
+   - Primary (filled `--ink`): `Read our eval methodology`, linked to the in-page methodology summary until a standalone page exists.
+   - Secondary (outlined `--ink`): `Start scoping` (NOT "sales", NOT "Book a demo", NOT "Book a call")
 
 No hero image. No illustration. No metaphor. No gradient backdrop. No grid-bg overlay. The table is the hero.
 
@@ -405,11 +405,12 @@ Reference preview: `/tmp/avad-design-preview-qS3Sue/index.html` on the originati
 
 | Date | Decision | Rationale |
 |---|---|---|
-| 2026-05-04 | Initial system created on `agwax/design-system` branch | `/design-consultation` run by user. Brand identity already existed; this system translates it into a working web design language. |
-| 2026-05-04 | DIN Next LT Arabic for both Latin and Arabic across display, body, UI | The brand bought a bilingual face deliberately. Splitting into separate Latin + Arabic faces breaks the equality posture and triples the licensing surface. |
-| 2026-05-04 | IBM Plex Mono as the mono pairing | Open-source, technically credible, pairs with DIN's geometry. Codex proposed Plex; subagent proposed Söhne Mono + GT America Mono. Plex wins on licensing and on not-introducing-a-third-and-fourth-font. |
-| 2026-05-04 | `#F2F2F2` as canonical surface (not `#FAFAF7` warm-paper drift) | Brand spec sheet says `#F2F2F2`. Subagent suggested `#FAFAF7` as warmer; rejected as taste leakage from brand fidelity. |
-| 2026-05-04 | Hero artifact = real eval comparison table (not dark terminal mockup) | The model-comparison framing (avad vs gpt-4o vs claude vs llama) is more provocative and screenshot-friendly than an eval-evidence table with `agent_task / data_boundary / failure_mode` columns. Audit evidence still gets a section. |
-| 2026-05-04 | Pricing visibility: PUBLISH (deferred to TODOS.md as a content decision) | Subagent flagged "publish pricing" as a deliberate departure. Strong agree, but pricing is a content decision (numbers and terms), not a design system decision. Logged for the user. |
-| 2026-05-04 | Primary CTA = `Read the eval methodology [PDF · 14 pp]`, refuse `Book a demo` / `Book a call` | Filters for buyers who read documents, the only kind that ship in regulated markets. Aligned with the wedge ("the eval is the artifact"). |
-| 2026-05-04 | Brand inconsistencies (`#F97035` vs `#FC6530`, RGB typo, Inter typesetting in `color.svg`) flagged but not auto-fixed | Brand assets are read-only by [AGENTS.md](AGENTS.md) policy. Logged in [TODOS.md](TODOS.md) for a future asset cleanup pass. |
+| Initial | Initial system created on `agwax/design-system` branch | `/design-consultation` run by user. Brand identity already existed; this system translates it into a working web design language. |
+| Initial | DIN Next LT Arabic for both Latin and Arabic across display, body, UI | The brand bought a bilingual face deliberately. Splitting into separate Latin + Arabic faces breaks the equality posture and triples the licensing surface. |
+| Initial | IBM Plex Mono as the mono pairing | Open-source, technically credible, pairs with DIN's geometry. Codex proposed Plex; subagent proposed Söhne Mono + GT America Mono. Plex wins on licensing and on not-introducing-a-third-and-fourth-font. |
+| Initial | `#F2F2F2` as canonical surface (not `#FAFAF7` warm-paper drift) | Brand spec sheet says `#F2F2F2`. Subagent suggested `#FAFAF7` as warmer; rejected as taste leakage from brand fidelity. |
+| Initial | Hero artifact = real eval comparison table (not dark terminal mockup) | The model-comparison framing (avad vs gpt-4o vs claude vs llama) is more provocative and screenshot-friendly than an eval-evidence table with `agent_task / data_boundary / failure_mode` columns. Audit evidence still gets a section. |
+| Initial | Pricing visibility: PUBLISH (deferred to TODOS.md as a content decision) | Subagent flagged "publish pricing" as a deliberate departure. Strong agree, but pricing is a content decision (numbers and terms), not a design system decision. Logged for the user. |
+| Initial | Initial primary CTA direction = `Read the eval methodology [PDF · 14 pp]`, refuse `Book a demo` / `Book a call` | Superseded on 2026-05-05 by the in-page methodology target while the standalone page/PDF remains deferred. |
+| 2026-05-05 | Hero headline = `AI agents that hold up in production.` Primary CTA links to the in-page eval methodology summary. | Owner chose the production headline over the evals/data/auditors variant. A standalone methodology page or PDF can replace the in-page target later. |
+| Initial | Brand inconsistencies (`#F97035` vs `#FC6530`, RGB typo, Inter typesetting in `color.svg`) flagged but not auto-fixed | Brand assets are read-only by [AGENTS.md](AGENTS.md) policy. Logged in [TODOS.md](TODOS.md) for a future asset cleanup pass. |

@@ -1,8 +1,7 @@
 # avad.ai Landing Page: Content Package
 
-**Author:** Senior content strategist (engagement deliverable). Updated by /autoplan review on 2026-05-04.
+**Author:** Senior content strategist (engagement deliverable). Updated by /autoplan review.
 **Status:** Post-/autoplan rewrite. Auto-decisions applied; 12 user challenges surfaced in TODOS.md as deferred decisions; 4 launch-blockers flagged in-line.
-**Date:** 2026-05-04.
 **Out of scope here:** HTML, CSS, visual design, SEO meta, real metrics, real logos, real case studies. Placeholders are marked with `[BRACKETS]`.
 
 **What changed from the prior revision (commit 53028b2 and earlier):**
@@ -105,8 +104,8 @@ The first sentence names three concrete audiences (engineering, security, compli
 **Subhead (23 words):**
 > avad.ai builds AI agents you can put in production, builds the teams that run them, and publishes the open tools the field depends on. Model-agnostic by contract.
 
-**Primary CTA:** Book a 30-minute scoping call
-**Secondary CTA:** Read our eval methodology `<!-- LAUNCH-BLOCKER: secondary CTA must point to a real /eval-methodology page or be changed before launch. See TODOS.md auto-decisions list. -->`
+**Primary CTA:** Read our eval methodology `<!-- Current site target: in-page #eval-methodology card in Technical Credibility. A standalone /eval-methodology page or PDF can replace this later. -->`
+**Secondary CTA:** Start scoping
 
 ---
 
@@ -277,7 +276,7 @@ Frontier models (Anthropic Claude, OpenAI GPT family, Google Gemini), open-weigh
 Non-English performance is a first-class evaluation lane on every applicable engagement: language-specific retrieval quality, dialectal coverage, and hallucination rates measured against locale-appropriate prompts. We do not treat localization as a translation layer bolted on at the end.
 
 ### Eval methodology
-Every system we ship is evaluated at three levels: final-output, intermediate-step, and full-trajectory. The test framework is documented in the repo. Suite is wired into your CI before handover. Coverage targets are agreed up front and reported weekly during build. Methodology is published; we link to our public eval starter kits in section 3.9. `<!-- LAUNCH-BLOCKER: this paragraph references "/eval-methodology" via the Read CTA. That page must exist before launch. -->`
+Every system we ship is evaluated at three levels: final-output, intermediate-step, and full-trajectory. The test framework is documented in the repo. Suite is wired into your CI before handover. Coverage targets are agreed up front and reported weekly during build. The current site links the hero CTA to this methodology summary until a standalone methodology page exists.
 
 ### Security and compliance
 - SOC 2 Type II: `[STATUS, with attestation date]` `<!-- LAUNCH-BLOCKER: if Type II is not started, descope this line entirely or label "in progress, target [DATE]." Implying SOC 2 is imminent when it isn't kills credibility on the first RFP. -->`
@@ -287,8 +286,8 @@ Every system we ship is evaluated at three levels: final-output, intermediate-st
 - DPAs and BAAs signed as required.
 - We do not train models on client data. Engagement contracts state this explicitly.
 
-### Open-source contributions
-We publish MCP servers, skills, plugins, and eval starter kits to the public ecosystem. Details and links in section 3.9.
+### Publishing surface
+Public publishing details stay deferred until the public surface is ready.
 
 ---
 
@@ -315,7 +314,7 @@ The original section 3.9 v1 content is preserved in the v1 file (`avad-ai-landin
 
 ## 3.10 FAQ
 
-*Eight questions sophisticated buyers actually ask. Designer note: render as multi-accordion (multiple panels can be open simultaneously), default-collapsed, with an "Expand all" control. Anchor link per question for deep-linking from sales emails. WAI-ARIA accordion pattern: aria-expanded, aria-controls, focus-visible ring, Enter+Space activation, Escape collapses focused panel.*
+*Seven questions sophisticated buyers actually ask. Designer note: render as multi-accordion (multiple panels can be open simultaneously), default-collapsed, with an "Expand all" control. Anchor link per question for deep-linking from sales emails. WAI-ARIA accordion pattern: aria-expanded, aria-controls, focus-visible ring, Enter+Space activation, Escape collapses focused panel.*
 
 ### How do you price?
 Fixed scope plus a written deliverable for most engagements. For longer programs we offer a base retainer with a success fee indexed to KPIs we agree on up front (rollback rate, cost reduction, time to compliance). We do not bill by the hour for senior work. `<!-- DEFERRED: User Challenge 9 — both review voices recommend adding a procurement-friendly secondary structure (published blended rate for vendor onboarding, milestone billing against fixed-fee SOW, change-order mechanics, liability caps). Without it, F1000 vendor onboarding may bounce. See TODOS.md. -->`
@@ -338,11 +337,6 @@ Senior engineers and AI researchers only. The person scoping the engagement is t
 ### Do you train our team, or just build for us?
 Both, on every engagement. Capability transfer is in scope by default. If you want a build with no enablement, we can carve that out, but the default contract assumes we leave; eval ownership, runbook ownership, and incident-response ownership all transfer to your engineers before the engagement closes. The Embedded Capability Build is the explicit version of what every engagement does implicitly.
 
-### Why do you publish open-source tools? Is our IP safe in our repo?
-Yes, your IP is safe. Your engagement work product (code, prompts, evals, data) stays in your repo, owned by you. Our public work (MCP servers, skills, plugins, eval starter kits) is separate and never includes client-derived material. We publish because public artifacts sharpen our craft and compound credibility better than case studies. Your contracts state the boundary explicitly.
-
----
-
 ## 3.11 Final CTA
 
 **Section headline:** Tell us what broke.
@@ -350,7 +344,7 @@ Yes, your IP is safe. Your engagement work product (code, prompts, evals, data) 
 **Body (2 sentences):**
 > 30-minute scoping call. No deck required. Bring the failure mode and the deadline; we will tell you whether it is an avad.ai engagement or something you should keep in-house.
 
-**Button:** Book a scoping call
+**Button:** Email scoping@avad.ai
 
 **Friction reducer beneath button (one line):**
 > No NDA needed for the first call. We sign before any specifics are shared.

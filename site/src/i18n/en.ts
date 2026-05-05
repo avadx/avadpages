@@ -16,13 +16,11 @@ export const t = {
     why: "Why avad.ai",
     cred: "Credibility",
     faq: "FAQ",
-    book: "Book a call",
+    book: "Scoping",
     menu: "Menu",
   },
   meta_strip: {
     runLabel: "EVAL_RUN",
-    runDate: "2026-05-04",
-    runTime: "04:12 UTC",
     statusLabel: "LIVE",
     statusTasks: "6 tasks",
     statusModels: "4 models",
@@ -34,9 +32,9 @@ export const t = {
     h1Post: " in production.",
     subhead:
       "avad.ai builds AI agents you can put in production, builds the teams that run them, and publishes the open tools the field depends on. Model-agnostic by contract.",
-    ctaPrimary: "Book a 30-minute scoping call",
-    ctaPrimaryMeta: "30 min",
-    ctaSecondary: "Read our eval methodology",
+    ctaPrimary: "Read our eval methodology",
+    ctaPrimaryMeta: "",
+    ctaSecondary: "Start scoping",
   },
   artifact: {
     title: "evals/trajectory_suite",
@@ -57,7 +55,7 @@ export const t = {
     ],
   },
   proof: {
-    head: "What avad.ai ships, by default",
+    head: "What avad.ai ships.",
     strip: [
       { label: "Trajectory eval suite", val: "412 cases · in client repo" },
       { label: "Model-swap baseline", val: "≥ 2 providers measured" },
@@ -92,7 +90,7 @@ export const t = {
     sectionId: "3.4 · SERVICES",
     tag: "Services",
     h2: "Six engagements. Fixed scope. Written success criteria.",
-    sub: "Filter by the situation you are in. Each entry opens to scope, ideal buyer, and engagement shape.",
+    sub: "Filter by your situation. Each entry opens to scope, ideal buyer, and engagement shape.",
     chips: ["All", "Failed pilot", "Renewal pressure", "Enforcement window", "Board deck", "Build a team"],
     labels: { scope: "Scope", buyer: "Ideal buyer", shape: "Engagement shape" },
     list: [
@@ -112,7 +110,7 @@ export const t = {
       {
         num: "02 / Audit",
         h: "Eval Audit and Rebuild",
-        promise: "We assess your existing AI system against real failure modes and ship the eval suite that should have shipped with it.",
+        promise: "We assess your AI system against real failure modes and ship the eval suite that should have shipped with it.",
         tag: "Failed pilot",
         scope: [
           "Trajectory-level evaluation against current production traffic.",
@@ -129,7 +127,7 @@ export const t = {
         tag: "Build a team",
         scope: [
           "On-the-job skill build for engineers, AI lead, and compliance: eval design, model contracts, prompt and tool review, post-incident analysis.",
-          "Hands-on ride-along on a real engagement (your codebase, your traffic, your failure modes).",
+          "Hands-on ride-along on a real engagement (your codebase, traffic, and failure modes).",
           "AI Center of Excellence design: governance, decision rights, escalation paths. Includes EU AI Act Article 4 literacy curriculum.",
         ],
         buyer: "Head of AI building an internal team. CTO sequencing first AI deployments.",
@@ -138,7 +136,7 @@ export const t = {
       {
         num: "04 / Compliance",
         h: "Compliance Readiness (EU AI Act + Saudi PDPL)",
-        promise: "We map your AI systems to the regulations that bind them, close the documentation and architecture gaps, and stand up audit infrastructure before the enforcement window.",
+        promise: "We map your AI systems to the regulations that bind them, close documentation and architecture gaps, and stand up audit infrastructure before the enforcement window.",
         tag: "Enforcement window",
         scope: [
           "EU AI Act Annex III classification of in-scope systems; Saudi PDPL classification for in-Kingdom workloads; sector overlay where applicable.",
@@ -156,7 +154,7 @@ export const t = {
         scope: [
           "Abstraction layer over MCP and A2A. Model-agnostic prompt and tool contracts.",
           "Documented swap plan with regression budget.",
-          "Cost, latency, and accuracy baseline across at least two providers, with regional sovereign-model options (EU, GCC) included where they fit.",
+          "Cost, latency, and accuracy baseline across at least two providers, plus regional sovereign-model options (EU, GCC) where they fit.",
         ],
         buyer: "Engineering leader negotiating a renewal, or one bracing for a model deprecation.",
         shape: "4 to 8 weeks. Working swap plus documentation.",
@@ -164,7 +162,7 @@ export const t = {
       {
         num: "06 / Strategy",
         h: "AI Strategy for Boards",
-        promise: "The technical brief your CEO and board actually need: where AI moves the P&L, where it does not, and what the next 12 months should look like.",
+        promise: "The technical brief your CEO and board need: where AI moves the P&L, where it does not, and what the next 12 months should look like.",
         tag: "Board deck",
         scope: [
           "Use-case ROI modeling against your data and workflow.",
@@ -233,21 +231,21 @@ export const t = {
     sectionId: "3.7 · WHY AVAD.AI",
     tag: "Why avad.ai",
     h2: "Three differentiators. Each backed by an artifact, not an adjective.",
-    sub: "If we cannot measure it, we do not ship it. Each of the three lines below has a published artifact attached.",
+    sub: "If we cannot measure it, we do not ship it. Each line below has its artifact.",
     cards: [
       {
         h: "Eval suite ships with the agent",
-        p: "Every engagement ends with an eval suite committed to your repo. Trajectory coverage, failure-mode taxonomy, CI integration, regression budget. Not a slide.",
+        p: "An eval suite committed to your repo: trajectory coverage, failure-mode taxonomy, CI integration, regression budget.",
         rubric: { label: "Trajectory coverage on last 6 engagements", v: "median 91%", pct: 91 },
       },
       {
         h: "Model-portable, with measured drift",
-        p: "We design at the protocol layer (MCP, A2A) before we pick a model. Every engagement includes a documented swap plan and a measured baseline across at least two providers.",
+        p: "We design at the protocol layer (MCP, A2A) before we pick a model. Every engagement ships with a documented swap plan and a measured baseline across at least two providers.",
         rubric: { label: "Regression budget held within", v: "0.6 / 1.0 drift", pct: 60 },
       },
       {
         h: "Capability transfers to your team",
-        p: "Eval design, model-contract review, and compliance practice land in your engineers' weekly work. Capability is measured against a published rubric, before and after.",
+        p: "Eval design, model-contract review, and compliance practice land in your engineers' weekly work. Capability is measured against a published rubric.",
         rubric: { label: "Engineer authors a new trajectory eval", v: "before 3/10 → after 8/10", pct: 80 },
       },
     ],
@@ -256,7 +254,7 @@ export const t = {
     sectionId: "3.8 · TECHNICAL CREDIBILITY",
     tag: "Technical credibility",
     h2: "Specifics, not badges.",
-    sub: "Models we work with, evaluation methodology, security and compliance posture. Date-stamped at the bottom.",
+    sub: "",
     cards: [
       {
         h: "Models we work with",
@@ -289,9 +287,9 @@ export const t = {
         type: "list" as const,
         items: [
           "Data residency: KSA region, EU, US, or self-hosted at your election.",
-          "PDPL-aware by default for in-Kingdom workloads; SDAIA cross-border transfer conditions documented.",
+          "PDPL-aware for in-Kingdom workloads; SDAIA cross-border transfer conditions documented.",
           "DPAs and BAAs signed as required.",
-          "We do not train models on client data. Engagement contracts state this explicitly.",
+          "We do not train models on client data. Engagement contracts state this.",
         ],
         foot: "",
       },
@@ -307,12 +305,12 @@ export const t = {
         foot: "",
       },
     ],
-    stamp: "Facts and figures last verified: 2026-05-04.",
+    stamp: "",
   },
   faq: {
     sectionId: "3.10 · FAQ",
     tag: "FAQ",
-    h2: "Eight questions sophisticated buyers ask.",
+    h2: "Seven questions buyers ask.",
     sub: "Anchor links per question. Deep-link from a sales email.",
     items: [
       {
@@ -325,7 +323,7 @@ export const t = {
       },
       {
         q: "What if we change models mid-engagement?",
-        a: "That is the point. Every system we ship is designed for swap. We document the contract, run the regression on the new model, and update the baseline. A model swap inside an engagement is included in scope.",
+        a: "Every system we ship is designed for swap. We document the contract, run the regression on the new model, and update the baseline. A model swap inside an engagement is in scope.",
       },
       {
         q: "How do you measure agent reliability?",
@@ -333,7 +331,7 @@ export const t = {
       },
       {
         q: "How fast does this go?",
-        a: "First useful artifact in week one (scoping, failure-mode map, eval design). First working agent or refactor by week four. Most engagements ship in 6 to 12 weeks. We do not promise “production in 30 days” as a sales line, because that timeline is how the failed pilots got built.",
+        a: "First useful artifact in week one (scoping, failure-mode map, eval design). First working agent or refactor by week four. Most engagements ship in 6 to 12 weeks. We do not promise “production in 30 days”, because that timeline is how the failed pilots got built.",
       },
       {
         q: "What is the team?",
@@ -341,11 +339,7 @@ export const t = {
       },
       {
         q: "Do you train our team, or just build for us?",
-        a: "Both, on every engagement. Capability transfer is in scope by default. If you want a build with no enablement, we can carve that out, but the default contract assumes we leave: eval ownership, runbook ownership, and incident-response ownership all transfer to your engineers.",
-      },
-      {
-        q: "Why do you publish open-source tools? Is our IP safe in our repo?",
-        a: "Your IP is safe. Your engagement work product (code, prompts, evals, data) stays in your repo, owned by you. Public work (MCP servers, skills, eval starter kits) is separate and never includes client-derived material. Contracts state the boundary explicitly.",
+        a: "Both, on every engagement. Capability transfer is in scope. We can carve out enablement on request, but the default contract assumes ownership of evals, runbooks, and incident response transfers to your engineers.",
       },
     ],
   },
@@ -355,7 +349,7 @@ export const t = {
     h2: "Bring the failure mode and the deadline.",
     p: "30-minute scoping call. No deck required. We will tell you whether it is an avad.ai engagement or something you should keep in-house.",
     micro: "No NDA needed for the first call. We sign before any specifics are shared.",
-    btn: "Book a scoping call",
+    btn: "Email scoping@avad.ai",
     formCard: {
       title: "Scoping call",
       rows: [
@@ -383,10 +377,9 @@ export const t = {
       {
         h: "Practice",
         links: [
-          { label: "Eval methodology", href: "#cred" },
+          { label: "Eval methodology", href: "#eval-methodology" },
           { label: "Capability rubric", href: "#why" },
           { label: "Failure-mode taxonomy", href: "#cred" },
-          { label: "What we publish", href: "#cred" },
         ],
       },
       {
@@ -401,7 +394,7 @@ export const t = {
     ],
     languageEN: "EN",
     languageAR: "العربية",
-    stamp: "Facts last verified: 2026-05-04",
+    stamp: "",
     legal: "© 2026 avad.ai. All rights reserved.",
   },
 };

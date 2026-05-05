@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3.8] - 2026-05-05
+
+### Changed
+- `site/src/i18n/en.ts` and `site/src/i18n/ar.ts` — kept the hero headline as "AI agents that hold up in production.", made the primary hero CTA point to the in-page eval methodology card, moved scoping to the secondary CTA, tightened low-risk FAQ and credibility wording, and rewrote the Arabic strings to match the updated intent.
+- `site/src/components/Hero.astro` and `site/src/components/CredibilitySection.astro` — wired the primary CTA to `#eval-methodology`.
+- `docs/avad-ai-landing.md`, `DESIGN.md`, and `TODOS.md` — reconciled the hero decision, removed the PDF requirement from the current CTA path, and kept `/publish` deferred.
+- `VERSION` and `site/package.json` bumped to `0.0.3.8`.
+
 ## [0.0.3.7] - 2026-05-05
 
 ### Changed
