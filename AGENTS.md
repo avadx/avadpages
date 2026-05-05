@@ -64,6 +64,10 @@ For commits:
 3. No `&&` chaining of `git add` and `git commit`. Run each as a separate Bash call.
 4. Update `CHANGELOG.md` and bump `VERSION` for any user-visible content/structure change.
 
+For pushes and deploys:
+1. After pushing a branch, if a preview deployment is created, include the preview URL in the final response.
+2. If no preview URL is available, say that explicitly and include the check that was run.
+
 ## Commands
 
 All commands run from inside [site/](site/).
@@ -74,4 +78,3 @@ All commands run from inside [site/](site/).
 - `bun run preview` — preview the production build locally.
 
 No tests yet. When CI lands (Vale, Lychee, Playwright, axe-core, Lighthouse), this section gets the gate commands.
-
