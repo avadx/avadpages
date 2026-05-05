@@ -162,6 +162,38 @@ const { t } = Astro.props;
     line-height: 1.7;
   }
 
+  [lang="ar"] .finalcta__tag,
+  html[dir="rtl"] .finalcta__tag,
+  [lang="ar"] .finalcta__micro,
+  html[dir="rtl"] .finalcta__micro,
+  [lang="ar"] .finalcta__card-head,
+  html[dir="rtl"] .finalcta__card-head,
+  [lang="ar"] .finalcta__row dt,
+  html[dir="rtl"] .finalcta__row dt {
+    font-family: var(--font-body);
+    text-transform: none;
+    letter-spacing: 0;
+    direction: rtl;
+    text-align: start;
+  }
+
+  [lang="ar"] .finalcta__tag,
+  html[dir="rtl"] .finalcta__tag,
+  [lang="ar"] .finalcta__card-head,
+  html[dir="rtl"] .finalcta__card-head {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  [lang="ar"] .finalcta__micro,
+  html[dir="rtl"] .finalcta__micro,
+  [lang="ar"] .finalcta__row dt,
+  html[dir="rtl"] .finalcta__row dt {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
   [lang="ar"] .finalcta__row dd,
   html[dir="rtl"] .finalcta__row dd {
     font-size: 15px;

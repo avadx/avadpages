@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3.5] - 2026-05-05
+
+### Changed
+- `site/src/components/SectionHead.astro`, `WhySection.astro`, `CredibilitySection.astro`, `FinalCtaSection.astro`, and `Footer.astro` — fixed Arabic metadata typography from "لماذا avad.ai" onward by removing forced LTR direction, mono styling, uppercase transforms, and letter tracking from Arabic labels and footer metadata.
+- `VERSION` and `site/package.json` bumped to `0.0.3.5`.
+
 ## [0.0.3.4] - 2026-05-05
 
 ### Changed
